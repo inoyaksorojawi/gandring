@@ -98,11 +98,43 @@ cat > /etc/xray/config.json << END
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
     "loglevel": "info"
-
-          
-        
-  
-   
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -123,8 +155,41 @@ cat > /etc/xray/xvless.json << END
     "loglevel": "info"
   },
   "inbounds": [
-    
-}
+    {
+      "port": 8880,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -144,9 +209,42 @@ cat > /etc/xray/xtrojan.json << END
     "error": "/var/log/xray/error.log",
     "loglevel": "info"
   },
-  s
-           }
-        
+  "inbounds": [
+    {
+      "port": 2095,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -167,11 +265,41 @@ cat > /etc/xray/trojangrpc.json << END
     "loglevel": "info"
   },
   "inbounds": [
-    : true,
-      "statsOutboundDownlink" : true
+    {
+      "port": 2082,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
     }
-  }
-}
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -192,10 +320,41 @@ cat > /usr/local/etc/xray/xvmess.json << END
     "loglevel": "info"
   },
   "inbounds": [
-    
-         
-        
-          
+    {
+      "port": 8443,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -216,8 +375,41 @@ cat > /usr/local/etc/xray/vlessquic.json << END
     "loglevel": "info"
   },
   "inbounds": [
-    
-
+    {
+      "port": 2053,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -236,10 +428,44 @@ cat > /etc/xray/xss.json << END
   "log": {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
-    "loglevel": "warning"
+    "loglevel": "info"
   },
   "inbounds": [
-    
+    {
+      "port": 2083,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -257,10 +483,44 @@ cat > /etc/xray/sstcp.json << END
   "log": {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
-    "loglevel": "warning"
+    "loglevel": "info"
   },
   "inbounds": [
-    
+    {
+      "port": 2096,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "${uuid1}",
+            "alterId": 32
+#xray-vmess-tls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "${path_crt}",
+              "keyFile": "${path_key}"
+            }
+          ]
+        },
+        "tcpSettings": {},
+        "kcpSettings": {},
+        "httpSettings": {},
+        "wsSettings": {
+          "path": "/vmess/",
+          "headers": {
+            "Host": ""
+          }
+        },
+        "quicSettings": {}
+      }
+    }
 END
 
 # / / Installation Xray Service
