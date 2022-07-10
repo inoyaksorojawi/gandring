@@ -1,4 +1,4 @@
-#!/bin/bash
+x#!/bin/bash
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -412,7 +412,7 @@ wget -O restart "https://${wisnuvpn}/restart.sh"
 wget -O addhost "https://${wisnuvpn}/addhost.sh"
 wget -O about "https://${wisnuvpn}/about.sh"
 wget -O addssh "https://${wisnuvpn}/addssh.sh"
-wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
+#wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
 wget -O trialssh "https://${wisnuvpn}/trialssh.sh"
 wget -O menuu "https://${wisnuvpn}/menuu.sh"
 wget -O delssh "https://${wisnuvpn}/delssh.sh"
@@ -682,8 +682,7 @@ chmod +x deltrojanhdua
 chmod +x delvmessquic
 chmod +x delvlessquic
 chmod +x deltrojanquic
-chmod +x limit-speed
-
+#chmod +x limit-speed
 chmod +x renewvmess
 chmod +x renewvmessgrpc
 chmod +x renewvmesshdua
