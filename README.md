@@ -307,7 +307,7 @@ reboot
 
 • Badvpn                    : 7100, 7200, 7300
 
-• Nginx                     : 89
+• Nginx                     : 88
 
 • Wireguard                 : 591
 
@@ -315,7 +315,7 @@ reboot
 
 • PPTP VPN                  : 1732
 
-• SSTP VPN                  : 444
+• SSTP VPN                  : 666
 
 • Shadowsocks-R             : 1443-1543
 
@@ -339,6 +339,16 @@ reboot
 
 • XRAYS Vless TLS           : 443
 
+• XRAYS Vless XTLS          : 443
+
+• XRAYS Vless GFW TLS       : 443
+
+• XRAYS Vless HTTP TLS      : 443
+
+• XRAYS Vless HTTP NONTLS   : 8088
+
+• XRAYS Vless QUIC TLS      : 414
+
 • XRAYS Vless HTTP/2 TLS    : 1150
 
 • XRAYS Vless None TLS      : 2082
@@ -355,7 +365,7 @@ reboot
 
 • Trojan Websocket NON TLS  : 2095
 
-• Trojan HTTP/2             : 888
+• Trojan HTTP/2             : 1120
 
 • XRAYS Vmess GRPC TLS      : 2083
 
@@ -367,7 +377,7 @@ reboot
 
 • OHP OpenVPN               : 8383
 
-• Trojan Go                 : 2087
+• Trojan Go                 : 443
 
 • CloudFront Over Websocket : [OFF]
 
@@ -386,17 +396,13 @@ reboot
 
 • IPv6                    : [OFF]
 
-• Autoreboot On 05.00 GMT +7
+• Autoreboot On 04.00 GMT +7
 
 • Auto Delete Expired Account
 
 • Full Orders For Various Services
 
-• White Label
-
-• Auto Fix
-
-• Auto Update
+• LUXURY EDITION BY ZEROSSL
 
 <p align="center">
 <img height=21 src="https://komarev.com/ghpvc/?username=iniyaksorojawi">
