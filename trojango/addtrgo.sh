@@ -1,5 +1,5 @@
 #!/bin/bash
-# SL
+# wisnucokrosatrio
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -13,8 +13,8 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-uuid=$(cat /etc/trojan-go/uuid.txt)
-source /var/lib/crot/ipvps.conf
+
+source /var/lib/wisnucs/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
@@ -31,26 +31,31 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
+uuid=$(cat /etc/trojan-go/uuid.txt)
 read -p "Expired (Days) : " masaaktif
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan-go/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/akun.conf
 systemctl restart trojan-go.service
-link="trojan-go://${user}@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/gandring&encryption=none#$user"
+link="trojan-go://$uuid@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/gandring&encryption=none#$user"
 clear
 echo -e ""
-echo -e "=======-TROJAN-GO-======="
-echo -e "Remarks    : ${user}"
-echo -e "IP/Host    : ${MYIP}"
-echo -e "Address    : ${domain}"
-echo -e "Port       : ${trgo}"
-echo -e "Key        : ${user}"
-echo -e "Encryption : none"
-echo -e "Path       : /gandring"
-echo -e "Created    : $hariini"
-echo -e "Expired    : $exp"
-echo -e "========================="
-echo -e "Link TrGo  : ${link}"
-echo -e "========================="
-echo -e "Script Mod By zerossl"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;46m      🔰 AKUN TROJAN-GO 🔰        \e[m"   
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Remarks: ${user}"
+echo -e "IP/Host: ${MYIP}"
+echo -e "Address: ${domain}"
+echo -e "Port: ${trgo}"
+echo -e "Key: ${uuid}"
+echo -e "Encryption: none"
+echo -e "Path: /gandring"
+echo -e "Created: $hariini"
+echo -e "Expired: $exp"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "Link : ${link}"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[1;46m  🔰LUXURY EDITION BY ZEROSSL🔰   \e[m"   
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+
