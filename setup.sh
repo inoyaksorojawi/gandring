@@ -19,30 +19,28 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Link Hosting Kalian Untuk Ssh Vpn
-akbarvpn="raw.githubusercontent.com/pengkol/Mantap/main/ssh"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssh"
 # Link Hosting Kalian Untuk Sstp
-akbarvpnn="raw.githubusercontent.com/pengkol/Mantap/main/sstp"
+wisnuvpnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/sstp"
 # Link Hosting Kalian Untuk Ssr
-akbarvpnnn="raw.githubusercontent.com/pengkol/Mantap/main/ssr"
+wisnuvpnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-akbarvpnnnn="raw.githubusercontent.com/pengkol/Mantap/main/shadowsocks"
+wisnuvpnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-akbarvpnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/wireguard"
+wisnuvpnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/wireguard"
 # Link Hosting Kalian Untuk Xray
-akbarvpnnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/xray"
+wisnuvpnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/xray"
 # Link Hosting Kalian Untuk Ipsec
-akbarvpnnnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/ipsec"
+wisnuvpnnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ipsec"
 # Link Hosting Kalian Untuk Backup
-akbarvpnnnnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/backup"
+wisnuvpnnnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/backup"
 # Link Hosting Kalian Untuk Websocket
-akbarvpnnnnnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/websocket"
+wisnuvpnnnnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/websocket"
 # Link Hosting Kalian Untuk Ohp
-akbarvpnnnnnnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/ohp"
+wisnuvpnnnnnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$(wget -qO- ipinfo.io/ip);
 
 rm -f setup.sh
 clear
@@ -52,24 +50,24 @@ exit 0
 fi
 mkdir /var/lib/wisnucs;
 echo "IP=" >> /var/lib/wisnucs/ipvps.conf
-wget https://${akbarvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://${wisnuvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
 #install xray
-wget https://${akbarvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://${wisnuvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
-wget https://${akbarvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://${akbarvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget https://${wisnuvpn}/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://${wisnuvpnn}/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
-wget https://${akbarvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://${akbarvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://${wisnuvpnnn}/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://${wisnuvpnnnn}/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://${akbarvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://${wisnuvpnnnnn}/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install L2TP
-wget https://${akbarvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget https://${akbarvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://${wisnuvpnnnnnnn}/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget https://${wisnuvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
-wget https://${akbarvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
+wget https://${wisnuvpnnnnnnnnn}/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
-wget https://${akbarvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://${wisnuvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 # Install SlowDNS
 #wget https://raw.githubusercontent.com/pengkol/Mantap/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
 # Informasi IP Saya dan Semua Port TCP UDP
@@ -94,7 +92,7 @@ rm -f /root/install-ss-plugin.sh
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
 Description=autosetting
-Documentation=nekopoi.care
+Documentation=https://t.me/zerossl
 
 [Service]
 Type=oneshot
@@ -106,7 +104,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://${akbarvpn}/set.sh"
+wget -O /etc/set.sh "https://${wisnuvpn}/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
