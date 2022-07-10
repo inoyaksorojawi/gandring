@@ -1,5 +1,5 @@
 #!/bin/bash
-# SL
+# My Telegram : https://t.me/zerossl
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -21,6 +21,7 @@ PUBLIC_IP=$IP
 fi
 source /var/lib/wisnucs/ipvps.conf
 if [[ "$IP2" = "" ]]; then
+#domain=$(cat /etc/v2ray/domain)
 domain=$(cat /etc/xray/domain)
 else
 domain=$IP2
@@ -56,16 +57,16 @@ chmod 600 /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
 echo -e "### $VPN_USER $exp">>"/var/lib/wisnucs/data-user-l2tp"
 cat <<EOF
 
-============================
-L2TP/IPSEC PSK VPN
-============================
-IP/Host    : $PUBLIC_IP
-Domain     : $domain
-IPsec PSK  : gandring
-Username   : $VPN_USER
-Password   : $VPN_PASSWORD
-Created    : $hariini
-Expired    : $exp
-============================
-
-EOF
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[46;1;46m        🔰 AKUN L2TP 🔰           \E[0m"   
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "IP/Host    : $PUBLIC_IP"
+echo -e "Domain     : $domain"
+echo -e "IPsec PSK  : gandring"
+echo -e "Username   : $VPN_USER"
+echo -e "Password   : $VPN_PASSWORD"
+echo -e "Created    : $hariini"
+echo -e "Expired    : $exp"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[46;1;46m  🔰LUXURY EDITION BY ZEROSSL🔰   \E[0m"   
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
