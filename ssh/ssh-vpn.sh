@@ -343,7 +343,7 @@ END
 wget -q -O /etc/init.d/stunnel5 "https://${wisnuvpnnnn}/stunnel5.init"
 
 # Ubah Izin Akses
-chmod 0755 /etc/stunnel5/stunnel5.pem
+chmod 0644 /etc/stunnel5/stunnel5.pem
 chmod +x /etc/init.d/stunnel5
 cp /usr/local/bin/stunnel /usr/local/bin/stunnel5
 
