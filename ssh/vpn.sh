@@ -16,7 +16,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 
 # ==================================================
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/pengkol/Mantap/main/ssh"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
