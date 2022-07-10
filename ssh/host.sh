@@ -20,9 +20,9 @@ echo "$SUB_DOMAIN" >> /etc/xray/domain
 #
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c2)
 subns=$(</dev/urandom tr -dc a-z0-9 | head -c2)
-DOMAIN=gandring.my.id
-SUB_DOMAIN=cdn-${sub}.gandring.my.id
-NS_DOMAIN=ns-${subns}.gandring.my.id
+DOMAIN=smule.my.id
+SUB_DOMAIN=cdn-${sub}.smule.my.id
+NS_DOMAIN=ns-${subns}.smule.my.id
 CF_ID=djarumpentol01@gmail.com
 CF_KEY=380be704eee4db9f74f71565e4e52f0042a4b
 set -euo pipefail
