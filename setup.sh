@@ -73,7 +73,7 @@ wget https://${wisnuvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 # Informasi IP Saya dan Semua Port TCP UDP
 # wget https://raw.githubusercontent.com/pengkol/Mantap/main/ipsaya.sh && chmod +x ipsaya.sh
 # install shadowsocks plugin
-wget https://raw.githubusercontent.com/pengkol/Mantap/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
+#wget https://raw.githubusercontent.com/pengkol/Mantap/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
