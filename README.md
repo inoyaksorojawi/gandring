@@ -1,6 +1,6 @@
 <p align="center">
 <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+O+L+E+M+A+N+T+O+Y+E+B" />
-<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=L+U+X+U+R+Y+E+D+I+T+I+O+N+S+E+B+E+L+A+S+P+O+R+T+4+4+3" />
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+E+B+E+L+A+S+P+O+R+T+4+4+3" />
 </p>
 <p align='center'><a href="https://api.daily.dev/get?r=SOLEMANTOYEB"><img src="https://raw.githubusercontent.com/SOLEMANTOYEB/.github/main/kotori2.png?r=82s" width="150" alt="SOLEMANTOYEB"/></a></p>
 
