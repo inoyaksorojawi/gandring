@@ -110,7 +110,7 @@ rm -f setup.sh && apt update && apt upgrade -y && update-grub && sleep 2 && apt-
 
 ### Jangan Lupa Traktir Kopi
 <a href="https://trakteer.id/SOLEMANTOYEB/tip" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-6.png" height="40" style="border: 0px; height: 40px;" alt="Trakteer Saya"></a>
-https://trakteer.id/sulaiman-l/tip
+https://trakteer.id/SOLEMANTOYEB/tip
 
 ### 5. MENU, INFO ,UPDATE ,FIX
 * untuk menampilkan menu
@@ -406,7 +406,7 @@ reboot
 • LUXURY EDITION BY ZEROSSL
 
 <p align="center">
-<img height=21 src="https://komarev.com/ghpvc/?username=iniyaksorojawi">
+<img height=21 src="https://komarev.com/ghpvc/?username=inoyaksorojawi">
 </p>
 <div height='45' align="center">
 <h2>Contact me: <br>
@@ -416,6 +416,6 @@ reboot
 </h2>
 </div>
 <h2 align="center">
-<img height=150 src="https://github-readme-stats.vercel.app/api/top-langs/?username=SILEMANTOYEB&layout=compact&theme=dark">
-<img height=150 src="https://github-readme-stats.vercel.app/api?username=pengkol&count_private=true&show_icons=true&theme=dark">
+<img height=150 src="https://github-readme-stats.vercel.app/api/top-langs/?username=SOLEMANTOYEB&layout=compact&theme=dark">
+<img height=150 src="https://github-readme-stats.vercel.app/api?username=gandring&count_private=true&show_icons=true&theme=dark">
 <h2 align="center">
