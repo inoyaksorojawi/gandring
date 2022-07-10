@@ -50,7 +50,7 @@ exit 0
 fi
 mkdir /var/lib/wisnucs;
 echo "IP=" >> /var/lib/wisnucs/ipvps.conf
-wget https://${wisnuvpn}/host.sh && chmod +x host.sh && ./host.sh
+wget https://${wisnuvpn}/cf.sh && chmod +x cf.sh && ./cf.sh
 #install xray
 wget https://${wisnuvpnnnnnn}/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
