@@ -9,7 +9,7 @@ rm -f /etc/v2ray/domain
 rm -f /etc/xray/domain
 rm -rf /etc/xray/domain
 rm -rf /root/nsdomain
-rm -rf /var/lib/crot/ipvps.conf
+rm -rf /var/lib/wisnucs/ipvps.conf
 rm nsdomain
 rm domain
 mkdir -p /usr/bin/xray
