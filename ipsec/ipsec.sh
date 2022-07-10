@@ -17,7 +17,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/pengkol/Mantap/main/ipsec"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ipsec"
 
 VPN_IPSEC_PSK='gandring'
 NET_IFACE=$(ip -o $NET_IFACE -4 route show to default | awk '{print $5}');
@@ -291,12 +291,12 @@ mkdir -p /run/pluto
 service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
-wget -O /usr/bin/addl2tp https://${akbarvpn}/addl2tp.sh && chmod +x /usr/bin/addl2tp
-wget -O /usr/bin/dell2tp https://${akbarvpn}/dell2tp.sh && chmod +x /usr/bin/dell2tp
-wget -O /usr/bin/addpptp https://${akbarvpn}/addpptp.sh && chmod +x /usr/bin/addpptp
-wget -O /usr/bin/delpptp https://${akbarvpn}/delpptp.sh && chmod +x /usr/bin/delpptp
-wget -O /usr/bin/renewpptp https://${akbarvpn}/renewpptp.sh && chmod +x /usr/bin/renewpptp
-wget -O /usr/bin/renewl2tp https://${akbarvpn}/renewl2tp.sh && chmod +x /usr/bin/renewl2tp
-touch /var/lib/crot/data-user-l2tp
-touch /var/lib/crot/data-user-pptp
+wget -O /usr/bin/addl2tp https://${wisnuvpn}/addl2tp.sh && chmod +x /usr/bin/addl2tp
+wget -O /usr/bin/dell2tp https://${wisnuvpn}/dell2tp.sh && chmod +x /usr/bin/dell2tp
+wget -O /usr/bin/addpptp https://${wisnuvpn}/addpptp.sh && chmod +x /usr/bin/addpptp
+wget -O /usr/bin/delpptp https://${wisnuvpn}/delpptp.sh && chmod +x /usr/bin/delpptp
+wget -O /usr/bin/renewpptp https://${wisnuvpn}/renewpptp.sh && chmod +x /usr/bin/renewpptp
+wget -O /usr/bin/renewl2tp https://${wisnuvpn}/renewl2tp.sh && chmod +x /usr/bin/renewl2tp
+touch /var/lib/wisnucs/data-user-l2tp
+touch /var/lib/wisnucs/data-user-pptp
 rm -f /root/ipsec.sh
