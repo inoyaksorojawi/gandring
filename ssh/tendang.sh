@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Mod by SL
+# Script by : wisnu cokro satrio
 #!/bin/bash
 clear
 MAX=1
