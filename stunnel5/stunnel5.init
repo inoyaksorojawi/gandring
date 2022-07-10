@@ -19,7 +19,7 @@
 DEFAULTPIDFILE="/var/run/stunnel.pid"
 DAEMON=/usr/local/bin/stunnel5
 NAME=stunnel5
-DESC="Stunnel5 Service"
+DESC="STUNNEL5 ACTIVATED BY WISNUCOKROSATRIO"
 OPTIONS=""
 
 get_opt() {
