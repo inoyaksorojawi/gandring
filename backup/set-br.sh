@@ -12,9 +12,8 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/fisabiliyusri/Mantap/main/backup"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/backup"
 
 apt install rclone -y
 printf "q\n" | rclone config
@@ -36,18 +35,18 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user bckupvpns@gmail.com
-from bckupvpns@gmail.com
+user inoyaksorojawi@gmail.com
+from inoyaksorojawi@gmail.com
 password Yangbaru1 
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://${akbarvpn}/autobackup.sh"
-wget -O backup "https://${akbarvpn}/backup.sh"
-wget -O restore "https://${akbarvpn}/restore.sh"
-wget -O strt "https://${akbarvpn}/strt.sh"
-wget -O limitspeed "https://${akbarvpn}/limitspeed.sh"
+wget -O autobackup "https://${wisnuvpn}/autobackup.sh"
+wget -O backup "https://${wisnuvpn}/backup.sh"
+wget -O restore "https://${wisnuvpn}/restore.sh"
+wget -O strt "https://${wisnuvpn}/strt.sh"
+wget -O limitspeed "https://${wisnuvpn}/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
