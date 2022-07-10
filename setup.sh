@@ -85,7 +85,6 @@ rm -f /root/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/edu.sh
 rm -f /root/ohp.sh
-rm -f /root/install
 #rm -f /root/sl-grpc.sh
 #rm -f /root/install-sldns
 rm -f /root/install-ss-plugin.sh
@@ -157,7 +156,7 @@ echo " 🔰 VLESS H2C TLS : 1150" |tee -a log-install.txt
 echo " 🔰 VLESS QUIC : 414" |tee -a log-install.txt
 echo " 🔰 VLESS HTTP TLS : 443" |tee -a log-install.txt
 echo " 🔰 VLESS HTTP NON TLS : 8088" |tee -a log-install.txt
-echo " 🔰 TROJAN GO : 2053" |tee -a log-install.txt
+echo " 🔰 TROJAN GO : 443" |tee -a log-install.txt
 echo " 🔰 TROJAN GRPC : 8443" |tee -a log-install.txt
 echo " 🔰 TROJAN HTTP TLS : 443" |tee -a log-install.txt
 echo " 🔰 TROJAN HTTP NON TLS : 880" |tee -a log-install.txt
@@ -186,12 +185,12 @@ echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
 echo "   - IPtables                : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
 echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On 05.00 GMT +7" | tee -a log-install.txt
+echo "   - Autoreboot On 04.00 GMT +7" | tee -a log-install.txt
 echo "   - Autobackup Data" | tee -a log-install.txt
 echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
 echo "   - Full Orders For Various Services" | tee -a log-install.txt
-echo "   - White Label" | tee -a log-install.txt
+echo "   - WISNU & GANDRING" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo " Reboot 15 Sec"
 sleep 15
