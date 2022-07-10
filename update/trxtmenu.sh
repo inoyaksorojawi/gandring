@@ -140,15 +140,9 @@ renewtrojanquic
 cektrojanquic
 ;;
 0)
-clear
 menu
 ;;
 x)
-clear
 exit
-;;
-*)
-clear
-menu
 ;;
 esac
