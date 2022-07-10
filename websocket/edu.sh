@@ -1,20 +1,20 @@
 #!/bin/bash
-# Proxy For Edukasi & Imclass
-# SL
+# Proxy python cdn trik
+# wisnucokrosatrio
 # ==========================================
 
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/pengkol/Mantap/main/websocket"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/websocket"
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://${akbarvpn}/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://${wisnuvpn}/websocket.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
-Description=Python Proxy Mod By shanum
-Documentation=https://nekopi.care
+Description=WEBSOCKET NON TLS ROUTING NGUTER BY INOYAKSOROJAWI
+Documentation=https://t.me/zerossl
 After=network.target nss-lookup.target
 
 [Service]
@@ -35,14 +35,14 @@ systemctl enable ws-nontls
 systemctl restart ws-nontls
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://${akbarvpn}/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://${wisnuvpn}/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=Python Proxy Mod By wisnu
-Documentation=https://nekopoi.care
+Description=WEBSOCKET OVPN ROUTING DAM COLO PENGKOL BY SHANUM
+Documentation=https://t.me/zerossl
 After=network.target nss-lookup.target
 
 [Service]
@@ -63,14 +63,41 @@ systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-tls https://${akbarvpn}/ws-tls.py
+wget -q -O /usr/local/bin/ws-ovpntls https://${wisnuvpn}/ws-ovpntls.py
+chmod +x /usr/local/bin/ws-ovpntls
+# Installing Service
+cat > /etc/systemd/system/ws-ovpntls.service << END
+[Unit]
+Description=WEBSOCKET OVPN ROUTING DAM COLO PENGKOL BY SHANUM
+Documentation=https://t.me/zerossl
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpntls 2087
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-ovpntls
+systemctl restart ws-ovpntls
+
+# Getting Proxy Template
+wget -q -O /usr/local/bin/ws-tls https://${wisnuvpn}/ws-tls.py
 chmod +x /usr/local/bin/ws-tls
 
 # Installing Service
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
-Description=Python Proxy Mod By gandring
-Documentation=https://nekopoi.care
+Description=WEBSOCKET TLS ROUTING GAJAH DEMAK BY WISNU CS
+Documentation=https://t.me/zerossl
 After=network.target nss-lookup.target
 
 [Service]
