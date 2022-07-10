@@ -129,8 +129,8 @@ apt install dos2unix -y
 
 apt -y install privoxy
 # Privoxy Ports
-Privoxy_Port1='2087'
-Privoxy_Port2='2086'
+Privoxy_Port1='4000'
+Privoxy_Port2='5000'
 
 # Creating Privoxy server config using cat eof tricks
 cd
@@ -141,8 +141,8 @@ confdir /etc/privoxy
 logdir /var/log/privoxy
 filterfile default.filter
 logfile logfile
-listen-address 0.0.0.0:2087
-listen-address 0.0.0.0:2086
+listen-address 0.0.0.0:4000
+listen-address 0.0.0.0:5000
 toggle 1
 enable-remote-toggle 0
 enable-remote-http-toggle 0
