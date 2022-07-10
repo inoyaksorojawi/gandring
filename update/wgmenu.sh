@@ -35,15 +35,9 @@ delwg
 renewwg
 ;;
 0)
-clear
 menu
 ;;
 x)
-clear
 exit
-;;
-*)
-clear
-menu
 ;;
 esac
