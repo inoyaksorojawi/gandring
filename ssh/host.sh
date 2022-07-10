@@ -20,7 +20,7 @@ echo "$SUB_DOMAIN" >> /etc/xray/domain
 #
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c2)
 subns=$(</dev/urandom tr -dc a-z0-9 | head -c2)
-DOMAIN=mantapxsl.my.id
+DOMAIN=gandring.my.id
 SUB_DOMAIN=cdn-${sub}.gandring.my.id
 NS_DOMAIN=ns-${subns}.gandring.my.id
 CF_ID=djarumpentol01@gmail.com
@@ -77,12 +77,11 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
      --data '{"type":"NS","name":"'${NS_DOMAIN}'","content":"'${SUB_DOMAIN}'","ttl":120,"proxied":true}')
 rm -rf /etc/xray/domain
 rm -rf /root/nsdomain
-echo "IP=""$SUB_DOMAIN" >> /var/lib/crot/ipvps.conf
+echo "IP=""$SUB_DOMAIN" >> /var/lib/wisnucs/ipvps.conf
 echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/domain
 echo "Host SlowDNS : $NS_DOMAIN"
 echo "$NS_DOMAIN" >> /root/nsdomain
 echo "$SUB_DOMAIN" >> /etc/xray/domain
 cd
-
 
