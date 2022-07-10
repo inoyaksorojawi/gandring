@@ -1,4 +1,5 @@
 #!/bin/bash
+# My Telegram : https://t.me/zerossl
 # ==========================================
 # Color
 RED='\033[0;31m'
