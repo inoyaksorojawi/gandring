@@ -29,7 +29,6 @@ elif [[ -e /etc/centos-release ]]; then
 	source /etc/os-release
 	OS=centos
 fi
-
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[information]${Font_color_suffix}"
 
@@ -37,9 +36,8 @@ if [[ -e /etc/wireguard/params ]]; then
 	echo -e "${Info} WireGuard sudah diinstal, silahkan ketik addwg untuk menambah client."
 	exit 1
 fi
-echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-${Info} instalasi Wireguard Script By zerossl
-echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+
+echo -e "${Info} Wireguard Script By wisnucokrosatrio"
 # Detect public IPv4 address and pre-fill for the user
 
 # Detect public interface and pre-fill for the user
@@ -71,7 +69,7 @@ SERVER_PUB_KEY=$(echo "$SERVER_PRIV_KEY" | wg pubkey)
 # Save WireGuard settings
 echo "SERVER_PUB_NIC=$SERVER_PUB_NIC
 SERVER_WG_NIC=wg0
-SERVER_WG_IPV4=10.11.11.1
+SERVER_WG_IPV4=10.11.12.1
 SERVER_PORT=591
 SERVER_PRIV_KEY=$SERVER_PRIV_KEY
 SERVER_PUB_KEY=$SERVER_PUB_KEY" >/etc/wireguard/params
@@ -86,12 +84,11 @@ PrivateKey = $SERVER_PRIV_KEY
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;" >>"/etc/wireguard/wg0.conf"
 
-iptables -t nat -I POSTROUTING -s 10.11.11.1 -o $SERVER_PUB_NIC -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.11.12.1/24 -o $SERVER_PUB_NIC -j MASQUERADE
 iptables -I INPUT 1 -i wg0 -j ACCEPT
 iptables -I FORWARD 1 -i $SERVER_PUB_NIC -o wg0 -j ACCEPT
 iptables -I FORWARD 1 -i wg0 -o $SERVER_PUB_NIC -j ACCEPT
 iptables -I INPUT 1 -i $SERVER_PUB_NIC -p udp --dport 591 -j ACCEPT
-iptables -I INPUT 1 -i $SERVER_PUB_NIC -p tcp --dport 591 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
@@ -109,14 +106,8 @@ cd /usr/bin
 wget -O addwg "https://${wisnuvpn}/addwg.sh"
 wget -O delwg "https://${wisnuvpn}/delwg.sh"
 wget -O renewwg "https://${wisnuvpn}/renewwg.sh"
-wget -O trial-wg "https://${wisnuvpn}/trial-wg.sh"
-wget -O portwg "https://${wisnuvpn}/portwg.sh"
-wget -O cekwg "https://${wisnuvpn}/cekwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
-chmod +x trial-wg
-chmod +x portwg
-chmod +x cekwg
 cd
 rm -f /root/wg.sh
