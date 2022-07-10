@@ -1,5 +1,6 @@
 #!/bin/bash
-#shadowsocks-libev obfs install by SL
+#shadowsocks-libev obfs install by wisnu cokro satrio
+# My Telegram : https://t.me/zerossl
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -15,23 +16,23 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/pengkol/Mantap/main/shadowsocks"
+wisnuvpn="raw.githubusercontent.com/samratu/large/file/shadowsocks"
 
 source /etc/os-release
 OS=$ID
 ver=$VERSION_ID
 
 #Install_Packages
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Install Paket..."
 apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake -y
-echo "Install Paket Selesai."
-echo "#############################################"
+echo "Install Paket Selesai BUILD UP BY WISNU COKRO SATRIO"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 
 #Install_Shadowsocks_libev
-echo "#############################################"
-echo "Install Shadowsocks-libev..."
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo "\e[1;31m Installing Shadowsocks-libev BY WISNU COKRO SATRIO....."
 apt-get install software-properties-common -y
 if [[ $OS == 'ubuntu' ]]; then
 apt install shadowsocks-libev -y
@@ -49,11 +50,11 @@ apt -t buster-backports install shadowsocks-libev -y
 apt -t buster-backports install simple-obfs -y
 fi
 fi
-echo "Install Shadowsocks-libev Selesai."
-echo "#############################################"
+echo "Install Shadowsocks-libev Selesai"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 #Server konfigurasi
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Konfigurasi Server."
 cat > /etc/shadowsocks-libev/config.json <<END
 {   
@@ -61,23 +62,23 @@ cat > /etc/shadowsocks-libev/config.json <<END
     "server_port":8488,
     "password":"tes",
     "timeout":60,
-    "method":"aes-256-cfb",
+    "method":"aes-128-gcm",
     "fast_open":true,
-    "nameserver":"8.8.8.8",
+    "nameserver":"1.1.1.1",
     "mode":"tcp_and_udp",
 }
 END
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 #mulai ~shadowsocks-libev~ server
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "mulai ss server"
 systemctl enable shadowsocks-libev.service
 systemctl start shadowsocks-libev.service
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 #buat client config
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "buat config obfs"
 cat > /etc/shadowsocks-libev.json <<END
 {
@@ -86,7 +87,7 @@ cat > /etc/shadowsocks-libev.json <<END
     "local_port":1080,
     "password":"",
     "timeout":60,
-    "method":"chacha20-ietf-poly1305",
+    "method":"aes-128-gcm",
     "mode":"tcp_and_udp",
     "fast_open":true,
     "plugin":"/usr/bin/obfs-local",
@@ -94,14 +95,14 @@ cat > /etc/shadowsocks-libev.json <<END
 }
 END
 chmod +x /etc/shadowsocks-libev.json
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 echo -e "">>"/etc/shadowsocks-libev/akun.conf"
 
-echo "#############################################"
+echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Menambahkan Perintah Shadowsocks-libev"
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2443:3543 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2444:3442 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2444:3442 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
