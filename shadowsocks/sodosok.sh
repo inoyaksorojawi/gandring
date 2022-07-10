@@ -16,7 +16,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/samratu/large/file/shadowsocks"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/shadowsocks"
 
 source /etc/os-release
 OS=$ID
@@ -28,8 +28,6 @@ echo "Install Paket..."
 apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake -y
 echo "Install Paket Selesai BUILD UP BY WISNU COKRO SATRIO"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
-
 #Install_Shadowsocks_libev
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "\e[1;31m Installing Shadowsocks-libev BY WISNU COKRO SATRIO....."
@@ -49,10 +47,8 @@ apt update
 apt -t buster-backports install shadowsocks-libev -y
 apt -t buster-backports install simple-obfs -y
 fi
-fi
 echo "Install Shadowsocks-libev Selesai"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 #Server konfigurasi
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Konfigurasi Server."
@@ -69,14 +65,12 @@ cat > /etc/shadowsocks-libev/config.json <<END
 }
 END
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 #mulai ~shadowsocks-libev~ server
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "mulai ss server"
 systemctl enable shadowsocks-libev.service
 systemctl start shadowsocks-libev.service
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 #buat client config
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "buat config obfs"
@@ -96,9 +90,7 @@ cat > /etc/shadowsocks-libev.json <<END
 END
 chmod +x /etc/shadowsocks-libev.json
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 echo -e "">>"/etc/shadowsocks-libev/akun.conf"
-
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Menambahkan Perintah Shadowsocks-libev"
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2444:3442 -j ACCEPT
