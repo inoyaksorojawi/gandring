@@ -28,8 +28,6 @@ echo -e "08\e[1;33m) Set up Autokill SSH \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "09\e[1;33m) Tampilkan User Multi Login SSH \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "10\e[1;33m) Sshws menu \e[m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "0\e[1;31m) Menu Utama \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "x\e[1;31m) Keluar \e[m"
@@ -66,18 +64,13 @@ autokill
 9)
 ceklim
 ;;
-10)
-ins-sshws
-;;
 0)
 menu
 ;;
 x)
-clear
 exit
 ;;
 *)
-clear
 menu
 ;;
 esac
