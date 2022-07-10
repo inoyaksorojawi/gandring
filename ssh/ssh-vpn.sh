@@ -14,15 +14,15 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/pengkol/Mantap/main/ssh"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssh"
 # Link Hosting Kalian Untuk Xray
-wisnuvpnn="raw.githubusercontent.com/pengkol/Mantap/main/xray"
+wisnuvpnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/xray"
 # Link Hosting Kalian Untuk Trojan Go
-wisnuvpnnn="raw.githubusercontent.com/pengkol/Mantap/main/trojango"
+wisnuvpnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/trojango"
 # Link Hosting Kalian Untuk Stunnel5
-wisnuvpnnnn="raw.githubusercontent.com/pengkol/Mantap/main/stunnel5"
+wisnuvpnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/stunnel5"
 # Link Hosting Kalian Untuk Update
-wisnuvpnnnnn="raw.githubusercontent.com/pengkol/Mantap/main/update"
+wisnuvpnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/update"
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -35,9 +35,9 @@ ver=$VERSION_ID
 country=ID
 state=Indonesia
 locality=Banten
-organization=target
-organizationalunit=target
-commonname=localhost
+organization=GANDRING
+organizationalunit=gandring
+commonname=gandring
 email=djarumpentol08@gmail.com
 
 # simple password minimal
@@ -97,6 +97,7 @@ apt -y install net-tools
 apt install ruby -y
 apt install python -y
 apt install make -y
+apt install privoxy -y
 apt install cmake -y
 apt install coreutils -y
 apt install rsyslog -y
@@ -128,8 +129,8 @@ apt install dos2unix -y
 
 apt -y install privoxy
 # Privoxy Ports
-Privoxy_Port1='4000'
-Privoxy_Port2='5000'
+Privoxy_Port1='2087'
+Privoxy_Port2='2086'
 
 # Creating Privoxy server config using cat eof tricks
 cd
@@ -140,8 +141,8 @@ confdir /etc/privoxy
 logdir /var/log/privoxy
 filterfile default.filter
 logfile logfile
-listen-address 0.0.0.0:4000
-listen-address 0.0.0.0:5000
+listen-address 0.0.0.0:2087
+listen-address 0.0.0.0:2086
 toggle 1
 enable-remote-toggle 0
 enable-remote-http-toggle 0
@@ -325,9 +326,9 @@ END
 # Service Stunnel5 systemctl restart stunnel5
 cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
-Description=Stunnel5 Service
+Description=STUNNEL5 ACTIVATED BY WISNUCOKROSATRIO
 Documentation=https://stunnel.org
-Documentation=https://github.com/Akbar218
+Documentation=https://github.com/inoyaksorojawi
 After=syslog.target network-online.target
 
 [Service]
@@ -445,9 +446,6 @@ wget -O portdropbear "https://${wisnuvpn}/portdropbear.sh"
 wget -O portopenssh "https://${wisnuvpn}/portopenssh.sh"
 wget -O portsshnontls "https://${wisnuvpn}/portsshnontls.sh"
 wget -O portsshwstls "https://${wisnuvpn}/portsshwstls.sh"
-
-wget -O ins-sshws "https://${wisnuvpn}/ins-sshws.sh"
-wget -O sshws-true "https://${wisnuvpn}/sshws-true.sh"
 
 wget -O addvmess "https://${wisnuvpnn}/addvmess.sh"
 wget -O addnewtr "https://${wisnuvpnn}/addnewtr.sh"
@@ -627,9 +625,6 @@ chmod +x ram
 chmod +x renewssh
 chmod +x clearlog
 
-chmod +x ins-sshws
-chmod +x sshws-true
-
 chmod +x changeport
 chmod +x portovpn
 chmod +x portwg
@@ -734,14 +729,9 @@ chmod +x addtrgo
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
-echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
+echo "0 4 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "0 1 * * * root delexp" >> /etc/crontab
-echo "10 4 * * * root clearlog && sslh-fix-reboot" >> /etc/crontab
-echo "0 0 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 12 * * * root clearlog && reboot" >> /etc/crontab
-echo "0 18 * * * root clearlog && reboot" >> /etc/crontab
-
 
 # remove unnecessary files
 cd
