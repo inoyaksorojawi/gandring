@@ -328,9 +328,9 @@ chmod 0755 /etc/stunnel5
 
 # Download Config Stunnel5
 cat > /etc/stunnel5/stunnel5.conf <<-EOF
-pid = /run/stunnel.pid 
-chroot = /var/lib/stunnel 
-client = no 
+pid = /var/run/stunnel.pid
+chroot = /var/lib/stunnel
+client = no
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
 socket = a:SO_REUSEADDR=1
