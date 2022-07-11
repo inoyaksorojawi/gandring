@@ -13,18 +13,12 @@
 #                    can be overridden in /usr/local/etc/default/stunnel, and that same file can be used
 #                    to completely disable *all* tunnels.
 ### END INIT INFO
-# Source function library.
-. /etc/rc.d/init.d/functions
 . /lib/lsb/init-functions
 
 DEFAULTPIDFILE="/var/run/stunnel.pid"
 DAEMON=/usr/local/bin/stunnel5
 NAME=stunnel5
 DESC="STUNNEL5 ACTIVATED BY WISNUCOKROSATRIO"
-RLIMITS=65535
-exec="/usr/local/bin/stunnel5"
-prog="stunnel"
-config="/etc/stunnel5/stunnel5.conf"
 OPTIONS=""
 
 get_opt() {
