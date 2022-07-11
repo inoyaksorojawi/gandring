@@ -90,15 +90,22 @@ apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
 # install wget and curl
-apt -y install wget curl
-apt -y install net-tools
+apt -y install wget
+apt -y install curl
 
+# Install Requirements Tools
+apt install ssl-cert -y
+apt install ca-certificate-y
 # Install Requirements Tools
 apt install ruby -y
 apt install python -y
-apt install make -y
 apt install privoxy -y
+apt install make -y
+apt install cowsay -y
+apt install figlet -y
+apt install lolcat -y
 apt install cmake -y
+apt install ncurses-utils -y
 apt install coreutils -y
 apt install rsyslog -y
 apt install net-tools -y
@@ -108,6 +115,7 @@ apt install nano -y
 apt install sed -y
 apt install gnupg -y
 apt install gnupg1 -y
+apt install gnupg2 -y
 apt install bc -y
 apt install jq -y
 apt install apt-transport-https -y
@@ -125,6 +133,14 @@ apt install libreadline-dev -y
 apt install zlib1g-dev -y
 apt install libssl-dev -y
 apt install libssl1.0-dev -y
+apt install libssl2.0-dev -y
+apt install libssl3.0-dev -y
+gem install lolcat
+apt install jq curl -y
+apt install dnsutils jq -y
+apt-get install tcpdump -y
+apt-get install dsniff -y
+apt install grepcidr -y
 apt install dos2unix -y
 
 apt -y install privoxy
@@ -251,7 +267,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --ssh 127.0.0.1:1153 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --ssh 127.0.0.1:42 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
