@@ -44,7 +44,7 @@ fi
 	if [[ "$LASTIP" = "" ]]; then
 	CLIENT_ADDRESS="10.11.11.2"
 	else
-	CLIENT_ADDRESS="10.11.qq.$((LASTIP+1))"
+	CLIENT_ADDRESS="10.11.11.$((LASTIP+1))"
 	fi
 
 	# Adguard DNS by default
@@ -98,4 +98,4 @@ AllowedIPs = $CLIENT_ADDRESS/32" >>"/etc/wireguard/$SERVER_WG_NIC.conf"
    	rm -f /root/wg0-client-$WgTrial.conf
 read -n 1 -s -r -p "Press any key to back on menu"
 
-trial-menu
+menu
