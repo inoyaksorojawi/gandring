@@ -183,9 +183,32 @@ sed -i "s|IP-ADDRESS|$MYIP|g" /etc/privoxy/config
 #Setting privoxy ports
 sed -i "s|Privoxy_Port1|$Privoxy_Port1|g" /etc/privoxy/config
 sed -i "s|Privoxy_Port2|$Privoxy_Port2|g" /etc/privoxy/config
+
+# Service privoxy
+cat > /lib/systemd/system/privoxy.service << END
+[Unit]
+Description=PRIVOXY ROUTING ACTIVATED BY WISNU
+Documentation=https://github.com/inoyaksorojawi
+After=network.target
+
+[Service]
+Environment=PIDFILE=/run/privoxy.pid
+Environment=OWNER=privoxy
+Environment=CONFIGFILE=/etc/privoxy/config
+Type=forking
+PIDFile=/run/privoxy.pid
+ExecStart=/usr/sbin/privoxy --pidfile $PIDFILE --user $OWNER $CONFIGFILE
+ExecStopPost=/bin/rm -f $PIDFILE
+SuccessExitStatus=15
+
+[Install]
+WantedBy=multi-user.target
+END
+systemctl daemon-reload
+systemctl enable privoxy
+systemctl restart privoxy
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
@@ -253,11 +276,37 @@ echo "/usr/sbin/nologin" >> /etc/shells
 #chmod 0755 /etc/dropbear
 #systemctl restart dropbear
 
-# install squid (proxy nya aku matikan)
+# install squid
 cd
 apt -y install squid3
 wget -O /etc/squid/squid.conf "https://${wisnuvpn}/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
+
+# Service Stunnel5 systemctl restart stunnel5
+cat > /lib/systemd/system/squid.service << END
+## Copyright (C) 1996-2020 The Squid Software Foundation and contributors
+##
+## Squid software is distributed under GPLv2+ license and includes
+## contributions from numerous individuals and organizations.
+## Please see the COPYING and CONTRIBUTORS files for details.
+##
+
+[Unit]
+Description=SQUID PROXY ACTIVATED BY SHANUM
+Documentation=https://github.com/wisnucokrosatrio
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/squid.pid
+ExecStartPre=/usr/sbin/squid --foreground -z
+ExecStart=/usr/sbin/squid -sYC
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+END
 
 # Install SSLH
 apt -y install sslh
@@ -284,6 +333,22 @@ DAEMON=/usr/sbin/sslh
 
 DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --ssh 127.0.0.1:1153 --openvpn 127.0.0.1:700 --http 127.0.0.1:80 --pidfile /var/run/sslh/sslh.pid -n"
 
+END
+
+# Service Sslh
+cat > /lib/systemd/system/sslh.service << END
+[[Unit]
+Description=SSH MULTIPLEXLER ACTIVATED BY GANDRING
+After=network.target
+Documentation=man:sslh(8)
+
+[Service]
+EnvironmentFile=/etc/default/sslh
+ExecStart=/usr/sbin/sslh --foreground $DAEMON_OPTS
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
 END
 
 # Restart Service SSLH
