@@ -229,8 +229,23 @@ echo "Port 22" >> /etc/ssh/sshd_config
 echo "Port 42" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
+# install stunnel 5 
+cd /root/
+wget -q -O dropbear.zip "https://${wisnuvpn}/dropbear.zip"
+unzip -o dropbear.zip
+cd /root/dropbear
+chmod +x configure
+./configure
+make
+make install
+cd /root
+rm -r -f dropbear
+rm -f dropbear.zip
+mkdir -p /etc/dropbear
+chmod 0755 /etc/dropbear
+
 # install dropbear
-apt -y install dropbear
+#apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=200/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 300 -p 1153"/g' /etc/default/dropbear
