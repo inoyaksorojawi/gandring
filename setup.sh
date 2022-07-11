@@ -115,9 +115,9 @@ echo "--------------------------------------------------------------------------
 echo ""  | tee -a log-install.txt
 echo " 🔰 >>> Service & Port" |tee -a log-install.txt
 echo " 🔰 PORT OPENSSH : 22" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN TCP : 1194" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN UDP : 1195" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN SSL : 990" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN TCP : 700" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN UDP : 800" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN SSL : 900" |tee -a log-install.txt
 echo " 🔰 PORT STUNNEL5 : 2087, 500, 600" |tee -a log-install.txt
 echo " 🔰 PORT DROPBEAR : 200, 300" |tee -a log-install.txt
 echo " 🔰 PORT SQUID : 3128, 3228" |tee -a log-install.txt
@@ -178,7 +178,7 @@ echo " 🔰 SHADOWSOCKS 2022 WS TLS : 2087" |tee -a log-install.txt
 echo " 🔰 SHADOWSOCKS 2022 GRPC : 2087" |tee -a log-install.txt
 echo " 🔰 XRAY MT PROTO : 111" |tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
+echo " >>> Server Information & Other Features"  | tee -a log-install.txt
 echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
 echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
 echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
