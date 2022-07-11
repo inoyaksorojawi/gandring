@@ -326,9 +326,13 @@ chmod 0755 /etc/stunnel5
 
 # Download Config Stunnel5
 cat > /etc/stunnel5/stunnel5.conf <<-END
+pid = /run/stunnel.pid 
+chroot = /var/lib/stunnel 
+client = no 
+setuid = stunnel 
+setgid = stunnel
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
-client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
@@ -345,6 +349,16 @@ connect = 127.0.0.1:2087
 accept = 900
 connect = 127.0.0.1:700
 
+debug = 7
+output = stunnel.log
+[https]
+accept = 443
+connect = 80
+;;TIMEOUTclose = 0 
+;;is a workaround for a design flaw in Microsoft SSL
+;;Microsoft implementations do not use SSL close-notify alert and thus
+;;they are vulnerable to truncation attacks
+TIMEOUTclose = 0
 END
 
 # make a certificate
