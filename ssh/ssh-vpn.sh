@@ -331,8 +331,6 @@ cat > /etc/stunnel5/stunnel5.conf <<-EOF
 pid = /run/stunnel.pid 
 chroot = /var/lib/stunnel 
 client = no 
-setuid = stunnel 
-setgid = stunnel
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
 socket = a:SO_REUSEADDR=1
@@ -356,7 +354,6 @@ accept = 443
 connect = 80
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
-TIMEOUTclose = 0
 
 EOF
 
