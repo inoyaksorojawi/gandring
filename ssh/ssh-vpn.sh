@@ -231,16 +231,15 @@ echo "Port 42" >> /etc/ssh/sshd_config
 
 # install stunnel 5 
 cd /root/
-wget -q -O dropbear.zip "https://${wisnuvpn}/dropbear.zip"
-unzip -o dropbear.zip
-cd /root/dropbear
-chmod +x configure
+wget -q -O https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/dropbear-2022.82.tar.bz2
+bunzip2 dropbear-2022.82.tar.bz2
+tar xopf dropbear-2022.82.tar
+cd dropbear-2022.82
 ./configure
 make
 make install
 cd /root
-rm -r -f dropbear
-rm -f dropbear.zip
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
 mkdir -p /etc/dropbear
 chmod 0755 /etc/dropbear
 
