@@ -437,7 +437,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
- download script
+#download script
 cd /usr/bin
 wget -O restart "https://${wisnuvpn}/restart.sh"
 wget -O addhost "https://${wisnuvpn}/addhost.sh"
