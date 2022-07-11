@@ -9,7 +9,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
  Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/AkbarStoreVPN/scriptvps/main/wireguard"
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard"
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -28,7 +28,7 @@ if [[ -e /etc/wireguard/params ]]; then
 	exit 1
 fi
 
-echo -e "${Info} Wireguard Script By Akbar Maulana"
+echo -e "${Info} Wireguard Script By Wisnu zcokro Satrio"
 # Detect public IPv4 address and pre-fill for the user
 
 # Detect public interface and pre-fill for the user
