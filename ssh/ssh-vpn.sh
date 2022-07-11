@@ -408,6 +408,10 @@ connect = 127.0.0.1:300
 accept = 500
 connect = 127.0.0.1:2087
 
+[stunnel]
+accept = 443
+connect = 127.0.0.1:22
+
 [openvpn]
 accept = 900
 connect = 127.0.0.1:700
