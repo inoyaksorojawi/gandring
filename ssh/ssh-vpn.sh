@@ -351,18 +351,13 @@ connect = 127.0.0.1:2087
 accept = 900
 connect = 127.0.0.1:700
 
-;debug = 7
-output = stunnel.log
 [https]
 accept = 443
 connect = 80
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
-;;TIMEOUTclose = 0 
-;;is a workaround for a design flaw in Microsoft SSL
-;;Microsoft implementations do not use SSL close-notify alert and thus
-;;they are vulnerable to truncation attacks
 TIMEOUTclose = 0
+
 EOF
 
 # make a certificate
