@@ -39,7 +39,7 @@ pkill sldns-client
 #systemctl enable server-sldns
 #systemctl start client-sldns
 #systemctl start server-sldns
-systemctl restart client-sldns
+#systemctl restart client-sldns
 #systemctl restart server-sldns
 systemctl restart ws-tls
 systemctl restart ws-nontls
@@ -58,16 +58,14 @@ echo -e "Username: $Login"
 echo -e "Password: $Pass"
 echo -e "Created: $hariini"
 echo -e "Expired: $expi"
-echo -e "━━━━━━━━━━━━━━━━━━━"
 echo -e "IP/Host: $IP"
 echo -e "Domain SSH: $domain"
-echo -e "━━━━━━━━━━━━━━━━━━━"
 echo -e "Dropbear:200, 300"
 echo -e "SSL/TLS: 500, 600"
 echo -e "Port Ssh WS Tls: 2087"
 echo -e "Port Ssh WS NonTls: 2086"
 echo -e "Port OVPN WS: 8080"
-echo -e "BadVPN UDPGW: 7100,7200,7300"
+echo -e "BadVPN/UDPGW: 7100,7200,7300"
 echo -e "Proxy Squid: 3128, 3228"
 echo -e "OVPN Port TCP: $ovpn"
 echo -e "OVPN Port UDP: $ovpn2"
@@ -75,7 +73,6 @@ echo -e "OVPN Port SSL: 900"
 echo -e "OVPN TCP: http://$IP:88/tcp.ovpn"
 echo -e "OVPN UDP: http://$IP:88/udp.ovpn"
 echo -e "OVPN SSL: http://$IP:88/ssl.ovpn"
-echo -e "━━━━━━━━━━━━━━━━━━━"
 echo -e "Payload SSH WEBSOCKET"
 echo -e "GET wss://bug.com/ HTTP/1.1[crlf]Host:[host][crlf]Upgrade:websocket[crlf][crlf]"
 echo -e "━━━━━━━━━━━━━━━━━━━"
