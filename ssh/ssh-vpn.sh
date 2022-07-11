@@ -326,7 +326,7 @@ mkdir -p /etc/stunnel5
 chmod 0755 /etc/stunnel5
 
 # Download Config Stunnel5
-cat > /etc/stunnel5/stunnel5.conf <<-END
+cat > /etc/stunnel5/stunnel5.conf <<-EOF
 pid = /run/stunnel.pid 
 chroot = /var/lib/stunnel 
 client = no 
@@ -350,7 +350,7 @@ connect = 127.0.0.1:2087
 accept = 900
 connect = 127.0.0.1:700
 
-debug = 7
+;debug = 7
 output = stunnel.log
 [https]
 accept = 443
@@ -362,7 +362,7 @@ key = /etc/ssl/private/privkey.pem
 ;;Microsoft implementations do not use SSL close-notify alert and thus
 ;;they are vulnerable to truncation attacks
 TIMEOUTclose = 0
-END
+EOF
 
 # make a certificate
 #openssl genrsa -out key.pem 2048
