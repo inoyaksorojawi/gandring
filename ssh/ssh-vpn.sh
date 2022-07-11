@@ -94,9 +94,6 @@ apt -y install wget
 apt -y install curl
 
 # Install Requirements Tools
-apt install ssl-cert -y
-apt install ca-certificate-y
-# Install Requirements Tools
 apt install ruby -y
 apt install python -y
 apt install privoxy -y
@@ -133,8 +130,6 @@ apt install libreadline-dev -y
 apt install zlib1g-dev -y
 apt install libssl-dev -y
 apt install libssl1.0-dev -y
-apt install libssl2.0-dev -y
-apt install libssl3.0-dev -y
 gem install lolcat
 apt install jq curl -y
 apt install dnsutils jq -y
@@ -183,27 +178,6 @@ sed -i "s|IP-ADDRESS|$MYIP|g" /etc/privoxy/config
 #Setting privoxy ports
 sed -i "s|Privoxy_Port1|$Privoxy_Port1|g" /etc/privoxy/config
 sed -i "s|Privoxy_Port2|$Privoxy_Port2|g" /etc/privoxy/config
-
-# Service privoxy
-cat > /lib/systemd/system/privoxy.service << END
-[Unit]
-Description=PRIVOXY ROUTING ACTIVATED BY WISNU
-Documentation=https://github.com/inoyaksorojawi
-After=network.target
-
-[Service]
-Environment=PIDFILE=/run/privoxy.pid
-Environment=OWNER=privoxy
-Environment=CONFIGFILE=/etc/privoxy/config
-Type=forking
-PIDFile=/run/privoxy.pid
-ExecStart=/usr/sbin/privoxy --pidfile $PIDFILE --user $OWNER $CONFIGFILE
-ExecStopPost=/bin/rm -f $PIDFILE
-SuccessExitStatus=15
-
-[Install]
-WantedBy=multi-user.target
-END
 systemctl daemon-reload
 systemctl enable privoxy
 systemctl restart privoxy
@@ -333,22 +307,6 @@ DAEMON=/usr/sbin/sslh
 
 DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --ssh 127.0.0.1:1153 --openvpn 127.0.0.1:700 --http 127.0.0.1:80 --pidfile /var/run/sslh/sslh.pid -n"
 
-END
-
-# Service Sslh
-cat > /lib/systemd/system/sslh.service << END
-[[Unit]
-Description=SSH MULTIPLEXLER ACTIVATED BY GANDRING
-After=network.target
-Documentation=man:sslh(8)
-
-[Service]
-EnvironmentFile=/etc/default/sslh
-ExecStart=/usr/sbin/sslh --foreground $DAEMON_OPTS
-KillMode=process
-
-[Install]
-WantedBy=multi-user.target
 END
 
 # Restart Service SSLH
