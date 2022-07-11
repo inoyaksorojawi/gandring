@@ -104,8 +104,36 @@ netfilter-persistent save
 netfilter-persistent reload
 
 sleep 1
+
+# Service Stunnel5 systemctl restart stunnel5
+cat > /lib/systemd/system/wg-quick@.service << END
+[Unit]
+Description=WireGuard ROUTING DAM COLO PENGKOL BY GANDRING
+After=network-online.target nss-lookup.target
+Wants=network-online.target nss-lookup.target
+PartOf=wg-quick.target
+Documentation=man:wg-quick(8)
+Documentation=man:wg(8)
+Documentation=https://www.wireguard.com/
+Documentation=https://www.wireguard.com/quickstart/
+Documentation=https://github.com/inoyaksorojawi
+Documentation=https://github.com/wisnucokrosatrio
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/wg-quick up %i
+ExecStop=/usr/bin/wg-quick down %i
+Environment=WG_ENDPOINT_RESOLUTION_RETRIES=infinity
+
+[Install]
+WantedBy=multi-user.target
+END
+
 echo -e "[ ${green}INFO$NC ] Enable wireguard services..."
 systemctl daemon-reload
+systemctl enable wg-quick@.service
+systemctl restart wg-quick@.service
 systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 systemctl restart wg-quick@wg0
