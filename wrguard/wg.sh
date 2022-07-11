@@ -50,7 +50,7 @@ elif [[ ${OS} == 'centos' ]]; then
 	fi
 apt install iptables iptables-persistent -y
 # Make sure the directory exists (this does not seem the be the case on fedora)
-mkdir /etc/wireguard >/dev/null 2>&1
+mkdir -p /etc/wireguard
 chmod 600 -R /etc/wireguard/
 
 sleep 1
@@ -80,46 +80,46 @@ cat> /etc/wireguard/wg0.conf << END
 Address = $SERVER_WG_IPV4/24
 ListenPort = $SERVER_PORT
 PrivateKey = $SERVER_PRIV_KEY
-PostUp = sudo iptables -A FORWARD -i wg0 -j ACCEPT; sudo iptables -t nat -A POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;
-PostDown = sudo iptables -D FORWARD -i wg0 -j ACCEPT; sudo iptables -t nat -D POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT;iptables -t nat -A POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT;iptables -t nat -D POSTROUTING -o $SERVER_PUB_NIC -j MASQUERADE;
 END
 
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting up iptables..."
-sudo iptables -t nat -I POSTROUTING -s 10.11.11.1/24 -o $SERVER_PUB_NIC -j MASQUERADE
-sudo iptables -I INPUT 1 -i wg0 -j ACCEPT
-sudo iptables -I FORWARD 1 -i $SERVER_PUB_NIC -o wg0 -j ACCEPT
-sudo iptables -I FORWARD 1 -i wg0 -o $SERVER_PUB_NIC -j ACCEPT
-sudo iptables -I INPUT 1 -i $SERVER_PUB_NIC -p udp --dport 591 -j ACCEPT
-sudo iptables-save > /etc/iptables.up.rules
-sudo iptables-restore -t < /etc/iptables.up.rules
-sudo netfilter-persistent save >/dev/null 2>&1
-sudo netfilter-persistent reload >/dev/null 2>&1
+iptables -t nat -I POSTROUTING -s 10.11.11.1/24 -o $SERVER_PUB_NIC -j MASQUERADE
+iptables -I INPUT 1 -i wg0 -j ACCEPT
+iptables -I FORWARD 1 -i $SERVER_PUB_NIC -o wg0 -j ACCEPT
+iptables -I FORWARD 1 -i wg0 -o $SERVER_PUB_NIC -j ACCEPT
+iptables -I INPUT 1 -i $SERVER_PUB_NIC -p udp --dport 591 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
+netfilter-persistent save
+netfilter-persistent reload
 
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable wireguard services..."
-systemctl enable "wg-quick@wg0" >/dev/null 2>&1
-systemctl start "wg-quick@wg0" >/dev/null 2>&1
-
+systemctl daemon-reload
+systemctl enable wg-quick@wg0
+systemctl start wg-quick@wg0
+systemctl restart wg-quick@wg0
 
 # Check if WireGuard is running
-systemctl is-active --quiet "wg-quick@wg0" >/dev/null 2>&1
+systemctl is-active --quiet wg-quick@wg0
 WG_RUNNING=$?
 
 # Tambahan
+wget -q -O /usr/bin/addwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/addwg.sh" && chmod +x /usr/bin/addwg
+wget -q -O /usr/bin/delwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/delwg.sh" && chmod +x /usr/bin/delwg
+wget -q -O /usr/bin/cekwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/cekwg.sh" && chmod +x /usr/bin/cekwg
+wget -q -O /usr/bin/renewwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/renewwg.sh" && chmod +x /usr/bin/renewwg
+wget -q -O /usr/bin/trialwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/trialwg.sh" && chmod +x /usr/bin/trialwg
+wget -q -O /usr/bin/portwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/portwg.sh" && chmod +x /usr/bin/portwg
 
-wget -q -O /usr/bin/add-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/add-wg.sh" && chmod +x /usr/bin/add-wg
-wget -q -O /usr/bin/del-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/del-wg.sh" && chmod +x /usr/bin/del-wg
-wget -q -O /usr/bin/cek-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/cek-wg.sh" && chmod +x /usr/bin/cek-wg
-wget -q -O /usr/bin/renew-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/renew-wg.sh" && chmod +x /usr/bin/renew-wg
-wget -q -O /usr/bin/trial-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/trial-wg.sh" && chmod +x /usr/bin/trial-wg
-wget -q -O /usr/bin/port-wg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/port-wg.sh" && chmod +x /usr/bin/port-wg
-
-#wget -q -O /usr/bin/wg-menu "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/menu_all/wg-menu.sh" && chmod +x /usr/bin/wg-menu
+wget -q -O /usr/bin/wgmenu "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/update/wgmenu.sh" && chmod +x /usr/bin/wgmenu
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Wireguard install successfully..."
 sleep 5
-clear
-rm -f /root/wg.sh >/dev/null 2>&1
+cd
+rm -f /root/wg.sh
