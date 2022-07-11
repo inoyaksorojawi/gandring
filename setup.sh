@@ -27,7 +27,7 @@ wisnuvpnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
 wisnuvpnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-wisnuvpnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/wireguard"
+wisnuvpnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard"
 # Link Hosting Kalian Untuk Xray
 wisnuvpnnnnnn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/xray"
 # Link Hosting Kalian Untuk Ipsec
