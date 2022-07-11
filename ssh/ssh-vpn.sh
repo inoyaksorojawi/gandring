@@ -33,11 +33,11 @@ ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
-state=Indonesia
-locality=Banten
-organization=GANDRING
+state=Jawa-Tengah
+locality=Sukoharjo
+organization=GANDRING Inc
 organizationalunit=gandring
-commonname=gandring
+commonname=GANDRING
 email=djarumpentol08@gmail.com
 
 # simple password minimal
