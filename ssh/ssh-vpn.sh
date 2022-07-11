@@ -229,6 +229,15 @@ echo "Port 22" >> /etc/ssh/sshd_config
 echo "Port 42" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
+# install dropbear
+apt-get update -y
+apt-get install dropbear -y
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=200/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 300 -p 1153"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+/etc/init.d/dropbear restart
 # install stunnel 5 
 cd /root/
 wget -q -O https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/dropbear-2022.82.tar.bz2
@@ -242,15 +251,7 @@ cd /root
 ln /usr/local/sbin/dropbear /usr/sbin/dropbear
 mkdir -p /etc/dropbear
 chmod 0755 /etc/dropbear
-
-# install dropbear
-#apt -y install dropbear
-sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=200/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 300 -p 1153"/g' /etc/default/dropbear
-echo "/bin/false" >> /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-/etc/init.d/dropbear restart
+systemctl restart dropbear
 
 # install squid (proxy nya aku matikan)
 cd
@@ -354,6 +355,8 @@ output = stunnel.log
 [https]
 accept = 443
 connect = 80
+cert = /etc/ssl/private/fullchain.pem
+key = /etc/ssl/private/privkey.pem
 ;;TIMEOUTclose = 0 
 ;;is a workaround for a design flaw in Microsoft SSL
 ;;Microsoft implementations do not use SSL close-notify alert and thus
