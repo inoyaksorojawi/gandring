@@ -230,6 +230,7 @@ echo "Port 42" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 # install dropbear
+cd /root
 apt-get update -y
 apt-get install dropbear -y
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
@@ -239,19 +240,19 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 # install stunnel 5 
-cd /root/
-wget -q -O https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/dropbear-2022.82.tar.bz2
-bunzip2 dropbear-2022.82.tar.bz2
-tar xopf dropbear-2022.82.tar
-cd dropbear-2022.82
-./configure
-make
-make install
-cd /root
-ln /usr/local/sbin/dropbear /usr/sbin/dropbear
-mkdir -p /etc/dropbear
-chmod 0755 /etc/dropbear
-systemctl restart dropbear
+#cd /root
+#wget -q -O https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/dropbear-2022.82.tar.bz2
+#bunzip2 dropbear-2022.82.tar.bz2
+#tar xopf dropbear-2022.82.tar
+#cd dropbear-2022.82
+#./configure
+#make
+#make install
+#cd /root
+#ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+#mkdir -p /etc/dropbear
+#chmod 0755 /etc/dropbear
+#systemctl restart dropbear
 
 # install squid (proxy nya aku matikan)
 cd
