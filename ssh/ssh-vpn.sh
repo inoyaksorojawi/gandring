@@ -231,8 +231,7 @@ echo "Port 42" >> /etc/ssh/sshd_config
 
 # install dropbear
 cd /root
-apt-get update -y
-apt-get install dropbear -y
+apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=200/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 300 -p 1153"/g' /etc/default/dropbear
@@ -329,7 +328,6 @@ chmod 0755 /etc/stunnel5
 # Download Config Stunnel5
 cat > /etc/stunnel5/stunnel5.conf <<-EOF
 pid = /var/run/stunnel.pid
-chroot = /var/lib/stunnel
 client = no
 cert = /etc/ssl/private/fullchain.pem
 key = /etc/ssl/private/privkey.pem
