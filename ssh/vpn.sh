@@ -40,6 +40,9 @@ mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 sudo openvpn --genkey --secret ta.key
 cat ta.key > cat /etc/openvpn/server/ta.key <<EOF
+cat /etc/openvpn/server/ta.key >> /etc/openvpn/tcp.ovpn
+cat /etc/openvpn/server/ta.key >> /etc/openvpn/udp.ovpn
+cat /etc/openvpn/server/ta.key >> /etc/openvpn/ssl.ovpn
 # nano /etc/default/openvpn
 sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
