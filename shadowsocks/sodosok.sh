@@ -16,20 +16,16 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/wisnucokrosatrio/shanum/main/shadowsocks"
-
+wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/shadowsocks"
 source /etc/os-release
 OS=$ID
 ver=$VERSION_ID
-
 #Install_Packages
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Install Paket..."
 apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake -y
 echo "\e[1;31m Install Paket Selesai BUILD UP BY WISNU COKRO SATRIO \e[m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
-
 #Install_Shadowsocks_libev
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "\e[1;31m Installing Shadowsocks-libev BY WISNU COKRO SATRIO....."
@@ -49,10 +45,8 @@ apt update
 apt -t buster-backports install shadowsocks-libev -y
 apt -t buster-backports install simple-obfs -y
 fi
-fi
 echo "\e[1;31m Install Shadowsocks-libev Selesai.\e[m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 #Server konfigurasi
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Konfigurasi Server."
@@ -91,18 +85,16 @@ cat > /etc/shadowsocks-libev.json <<END
     "mode":"tcp_and_udp",
     "fast_open":true,
     "plugin":"/usr/bin/obfs-local",
-    "plugin_opts":"obfs=tls;failover=127.0.0.1:1443;fast-open"
+    "plugin_opts":"obfs=tls;failover=127.0.0.1:443;fast-open"
 }
 END
 chmod +x /etc/shadowsocks-libev.json
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
 echo -e "">>"/etc/shadowsocks-libev/akun.conf"
-
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Menambahkan Perintah Shadowsocks-libev"
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2444:3442 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2444:3442 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 20000:21000 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 20000:21000 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
