@@ -93,10 +93,7 @@ echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━�
 echo -e "">>"/etc/shadowsocks-libev/akun.conf"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "Menambahkan Perintah Shadowsocks-libev"
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 20000:21000 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 20000:21000 -j ACCEPT
-iptables-save > /etc/iptables.up.rules
-ip6tables-save > /etc/ip6tables.up.rules
+
 cd /usr/bin
 wget -O addss "https://${wisnuvpn}/addss.sh"
 wget -O delss "https://${wisnuvpn}/delss.sh"
