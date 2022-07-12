@@ -38,7 +38,8 @@ chown -R root:root /etc/openvpn/server/easy-rsa/
 cd
 mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
-
+sudo openvpn --genkey --secret ta.key
+cat ta.key > cat /etc/openvpn/server/ta.key <<EOF
 # nano /etc/default/openvpn
 sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
