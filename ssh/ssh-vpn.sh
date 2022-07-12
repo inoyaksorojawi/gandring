@@ -137,7 +137,6 @@ apt install dnsutils jq -y
 apt-get install tcpdump -y
 apt-get install dsniff -y
 apt install grepcidr -y
-apt install dos2unix -y
 
 apt -y install privoxy
 # Privoxy Ports
