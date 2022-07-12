@@ -128,8 +128,8 @@ echo " 🔰 L2TP/IPSEC VPN : 1701" |tee -a log-install.txt
 echo " 🔰 PPTP VPN : 1732" |tee -a log-install.txt
 echo " 🔰 SSTP VPN : 666" |tee -a log-install.txt
 echo " 🔰 Shadowsocks-R : 1444-1543" |tee -a log-install.txt
-echo " 🔰 SS-OBFS TLS : 2444-2943" |tee -a log-install.txt
-echo " 🔰 SS-OBFS HTTP : 2944-3442" |tee -a log-install.txt
+echo " 🔰 SS-OBFS TLS : 20000-20500" |tee -a log-install.txt
+echo " 🔰 SS-OBFS HTTP : 20501-30000" |tee -a log-install.txt
 echo " 🔰 XRAY SHADOWSOCKS : 333" |tee -a log-install.txt
 echo " 🔰 XRAY MTPROTO : 111" |tee -a log-install.txt
 echo " 🔰 WEBSOCKET TLS : 2087" |tee -a log-install.txt
