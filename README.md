@@ -296,7 +296,7 @@ reboot
 
 • Stunnel5                  : 500, 600
 
-• OpenVPN                   : TCP 1194, UDP 2200, SSL 990
+• OpenVPN                   : TCP 700, UDP 800, SSL 900
 
 • Websocket SSH TLS         : 2087
 
@@ -306,15 +306,15 @@ reboot
 
 • Squid Proxy               : 3128, 3228
 
-• Badvpn                    : 7100, 7200, 7300
+• Badvpn                    : 7100, 7200, 7300-7900
 
 • Nginx                     : 88
 
 • Wireguard                 : 591
 
-• L2TP/IPSEC VPN            : 1701
+• L2TP/IPSEC VPN            : 1443
 
-• PPTP VPN                  : 1732
+• PPTP VPN                  : 1444
 
 • SSTP VPN                  : 666
 
