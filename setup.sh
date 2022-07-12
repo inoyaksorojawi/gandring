@@ -124,8 +124,8 @@ echo " 🔰 PORT SQUID : 3128, 3228" |tee -a log-install.txt
 echo " 🔰 Badvpn : 7100, 7200, 7300-7900" |tee -a log-install.txt
 echo " 🔰 Nginx : 88" |tee -a log-install.txt
 echo " 🔰 WIREGUARD : 591" |tee -a log-install.txt
-echo " 🔰 L2TP/IPSEC VPN : 1701" |tee -a log-install.txt
-echo " 🔰 PPTP VPN : 1732" |tee -a log-install.txt
+echo " 🔰 L2TP/IPSEC VPN : 1443" |tee -a log-install.txt
+echo " 🔰 PPTP VPN : 1444" |tee -a log-install.txt
 echo " 🔰 SSTP VPN : 666" |tee -a log-install.txt
 echo " 🔰 Shadowsocks-R : 21500-22000" |tee -a log-install.txt
 echo " 🔰 SS-OBFS TLS : 20000-20500" |tee -a log-install.txt
