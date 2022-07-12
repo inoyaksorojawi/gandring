@@ -71,7 +71,7 @@ echo -e "[ ${green}INFO$NC ] Create config wireguard"
 cat> /etc/wireguard/params << END
 SERVER_PUB_NIC=$SERVER_PUB_NIC
 SERVER_WG_NIC=wg0
-SERVER_WG_IPV4=10.11.11.1
+SERVER_WG_IPV4=10.22.22.1
 SERVER_PORT=591
 SERVER_PRIV_KEY=$SERVER_PRIV_KEY
 SERVER_PUB_KEY=$SERVER_PUB_KEY
@@ -93,7 +93,7 @@ END
 
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting up iptables..."
-iptables -t nat -I POSTROUTING -s 10.11.11.1/24 -o $SERVER_PUB_NIC -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.22.22.1/24 -o $SERVER_PUB_NIC -j MASQUERADE
 iptables -I INPUT 1 -i wg0 -j ACCEPT
 iptables -I FORWARD 1 -i $SERVER_PUB_NIC -o wg0 -j ACCEPT
 iptables -I FORWARD 1 -i wg0 -o $SERVER_PUB_NIC -j ACCEPT
@@ -135,10 +135,6 @@ systemctl daemon-reload
 systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 systemctl restart wg-quick@wg0
-
-# Check if WireGuard is running
-systemctl is-active --quiet wg-quick@wg0
-WG_RUNNING=$?
 
 # Tambahan
 wget -q -O /usr/bin/addwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/addwg.sh" && chmod +x /usr/bin/addwg
