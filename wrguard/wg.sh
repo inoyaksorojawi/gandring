@@ -132,8 +132,6 @@ END
 
 echo -e "[ ${green}INFO$NC ] Enable wireguard services..."
 systemctl daemon-reload
-systemctl enable wg-quick@.service
-systemctl restart wg-quick@.service
 systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 systemctl restart wg-quick@wg0
