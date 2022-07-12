@@ -11,7 +11,7 @@ https://cardivo.vercel.app/api?name=SOLEMAN%20TOYEB&description=Hi,%20everyone!%
 <h2 align="center">
 Auto Script Install All VPN Service
 Mod By SOLEMANTOYEB
-<img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"></h2>
+<img src="https://img.shields.io/badge/Version-3.0.3-blue.svg"></h2>
 
 </p> 
 <h2 align="center"> Supported Linux Distribution</h2>
@@ -318,11 +318,11 @@ reboot
 
 • SSTP VPN                  : 666
 
-• Shadowsocks-R             : 1443-1543
+• Shadowsocks-R             : 21500-22000
 
-• SS-OBFS TLS               : 2443-2943
+• SS-OBFS TLS               : 20000-20500
 
-• SS-OBFS HTTP              : 2944-3543
+• SS-OBFS HTTP              : 20501-21000
 
 • XRAYS Vmess TLS           : 443
 
@@ -411,7 +411,7 @@ reboot
 <div height='45' align="center">
 <h2>Contact me: <br>
 <a href="https://github.com/SOLEMANTOYEB"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" height='50'> </a>
-<a href="https://facebook.com/SOLEMANTOYEN"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" height='50'> </a>
+<a href="https://facebook.com/SOLEMANTOYEB"> <img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" height='50'> </a>
 <a href="https://trakteer.id/SOLEMANTOYEB/tip"> <img src="https://cdn.trakteer.id/images/embed/trbtn-red-6.png" height='50'> </a>
 </h2>
 </div>
