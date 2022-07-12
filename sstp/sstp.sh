@@ -34,7 +34,6 @@ yoi=Debian9
 elif [[ "$ver" = "10" ]]; then
 yoi=Debian10
 fi
-fi
 mkdir /home/sstp
 touch /home/sstp/sstp_account
 touch /var/lib/wisnucs/data-user-sstp
