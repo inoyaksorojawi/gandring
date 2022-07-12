@@ -151,8 +151,8 @@ conn shared
 
 conn l2tp-psk
   auto=add
-  leftprotoport=17/1701
-  rightprotoport=17/%any
+  leftprotoport=14/1443
+  rightprotoport=14/%any
   type=transport
   phase2=esp
   also=shared
@@ -189,7 +189,7 @@ EOF
 # Create xl2tpd config
 cat > /etc/xl2tpd/xl2tpd.conf <<EOF
 [global]
-port = 1701
+port = 1443
 
 [lns default]
 ip range = $L2TP_POOL
