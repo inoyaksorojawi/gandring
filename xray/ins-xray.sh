@@ -684,54 +684,6 @@ END
 
 # // Enable & Start Service
 # Accept port Xray
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2086 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2086 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2053 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2053 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 22 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 300 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 300 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 200 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p udp --dport 200 -j ACCEPT
-
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8080 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2095 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2095 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2052 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2052 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8880 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 700 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 700 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 800 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 800 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 900 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 900 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 1153 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 1153 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2082 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2082 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 200 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 200 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 1080 -j ACCEPT
-sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 1080 -j ACCEPT
-iptables-save > /etc/iptables.up.rules
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
-
 systemctl daemon-reload
 systemctl stop xray
 systemctl enable xray
