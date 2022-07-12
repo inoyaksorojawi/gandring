@@ -14,7 +14,6 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- https://ipv4.icanhazip.com);
 MYIP6=$(wget -qO- https://ipv6.icanhazip.com);
-clear
 domain=$(cat /etc/xray/domain)
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -136,8 +135,7 @@ systemctl restart xvless
 systemctl restart xvmess
 systemctl restart trojangrpc
 service cron restart
-clear
-echo -e ""
+
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;46m 🔰 AKUN TROJAN TESTER 🔰 \e[m"       
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
