@@ -147,9 +147,7 @@ wget -q -O /usr/bin/cekwg "https://raw.githubusercontent.com/inoyaksorojawi/gand
 wget -q -O /usr/bin/renewwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/renewwg.sh" && chmod +x /usr/bin/renewwg
 wget -q -O /usr/bin/trialwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/trialwg.sh" && chmod +x /usr/bin/trialwg
 wget -q -O /usr/bin/portwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/portwg.sh" && chmod +x /usr/bin/portwg
-
-wget -q -O /usr/bin/wgmenu "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/update/wgmenu.sh" && chmod +x /usr/bin/wgmenu
-
+#wget -q -O /usr/bin/wgmenu "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/update/wgmenu.sh" && chmod +x /usr/bin/wgmenu
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "Wireguard install successfully..."
