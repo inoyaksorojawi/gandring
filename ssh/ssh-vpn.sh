@@ -108,6 +108,7 @@ apt install rsyslog -y
 apt install net-tools -y
 apt install zip -y
 apt install unzip -y
+apt install bunzip2 -y
 apt install nano -y
 apt install sed -y
 apt install gnupg -y
@@ -303,7 +304,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssl 127.0.0.1:900 --ssh 127.0.0.1:300 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
@@ -464,7 +465,7 @@ wget -O restart "https://${wisnuvpn}/restart.sh"
 wget -O addhost "https://${wisnuvpn}/addhost.sh"
 wget -O about "https://${wisnuvpn}/about.sh"
 wget -O addssh "https://${wisnuvpn}/addssh.sh"
-#wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
+wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
 wget -O trialssh "https://${wisnuvpn}/trialssh.sh"
 wget -O menuu "https://${wisnuvpn}/menuu.sh"
 wget -O delssh "https://${wisnuvpn}/delssh.sh"
@@ -617,9 +618,9 @@ wget -O setmenu "https://${wisnuvpnnnnn}/setmenu.sh"
 wget -O testermenu "https://${wisnuvpnnnnn}/testermenu.sh"
 wget -O menu "https://${wisnuvpnnnnn}/menu.sh"
 wget -O status "https://${wisnuvpnnnnn}/status.sh"
-#wget -O status2 "https://${wisnuvpnnnnn}/status2.sh"
-#wget -O status3 "https://${wisnuvpnnnnn}/status3.sh"
-#wget -O status4 "https://${wisnuvpnnnnn}/status4.sh"
+wget -O status2 "https://${wisnuvpnnnnn}/status2.sh"
+wget -O status3 "https://${wisnuvpnnnnn}/status3.sh"
+wget -O status4 "https://${wisnuvpnnnnn}/status4.sh"
 
 chmod +x testermenu
 chmod +x ceknewtr
@@ -635,9 +636,9 @@ chmod +x portdropbear
 chmod +x portopenssh
 chmod +x portstunnel5
 chmod +x status
-#chmod +x status2
-#chmod +x status3
-#chmod +x status4
+chmod +x status2
+chmod +x status3
+chmod +x status4
 
 chmod +x portsshnontls
 chmod +x portsshwstls
@@ -734,7 +735,7 @@ chmod +x deltrojanhdua
 chmod +x delvmessquic
 chmod +x delvlessquic
 chmod +x deltrojanquic
-#chmod +x limit-speed
+chmod +x limit-speed
 chmod +x renewvmess
 chmod +x renewvmessgrpc
 chmod +x renewvmesshdua
