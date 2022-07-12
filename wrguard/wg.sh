@@ -58,7 +58,7 @@ elif [[ ${OS} == 'centos' ]]; then
 apt install iptables iptables-persistent -y
 # Make sure the directory exists (this does not seem the be the case on fedora)
 mkdir -p /etc/wireguard
-chmod 600 -R /etc/wireguard/
+chmod 600 -R /etc/wireguard
 
 sleep 1
 echo -e "[ ${green}INFO$NC ] Generate key wireguard"
