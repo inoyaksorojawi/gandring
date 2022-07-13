@@ -100,7 +100,7 @@ echo -e "">>"/etc/shadowsocks-libev/akun.conf"
 echo "#############################################"
 echo "Menambahkan Perintah Shadowsocks-libev"
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 20000-20500 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 20501-22000 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 20501-21000 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
