@@ -1,6 +1,6 @@
 #!/bin/bash
-#shadowsocks-libev obfs install by Akbar Maulana
-# My Telegram : https://t.me/Akbar218
+#shadowsocks-libev obfs install by gandring
+# My Telegram : https://t.me/zerossl
 # ==========================================
 # Color
 RED='\033[0;31m'
