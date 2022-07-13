@@ -1,4 +1,4 @@
-x#!/bin/bash
+#!/bin/bash
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -638,96 +638,7 @@ chmod +x portvlm
 chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
-chmod +x addvmess
-chmod +x addvmessgrpc
-chmod +x addvmesshdua
-chmod +x addvmesshttp
-chmod +x addvless
-chmod +x addvlessgrpc
-chmod +x addtrojan
-chmod +x addvlesshttp
-chmod +x addvlesshdua
-chmod +x addvlessxtls
-chmod +x addxrayss
-chmod +x addxtlstrojan
-chmod +x addgrpctrojan
-chmod +x addtrojanwss
-chmod +x addtrojanhttp
-chmod +x addtrojanhdua
-chmod +x renewxrayss
-chmod +x addxtreme
-chmod +x addvmessquic
-chmod +x addvlessquic
-chmod +x addtrojanquic
 
-chmod +x delxtreme
-chmod +x cekxrayss
-chmod +x delxrayss
-chmod +x delvmess
-chmod +x delvmessgrpc
-chmod +x delvmesshdua
-chmod +x delvmesshttp
-chmod +x delvless
-chmod +x delvlessgrpc
-chmod +x delvlessxtls
-chmod +x delxrayss
-chmod +x deltrojan
-chmod +x delvlesshttp
-chmod +x delvlesshdua
-chmod +x delxtlstrojan
-chmod +x delgrpctrojan
-chmod +x deltrojanwss
-chmod +x deltrojanhttp
-chmod +x deltrojanhdua
-chmod +x delvmessquic
-chmod +x delvlessquic
-chmod +x deltrojanquic
-#chmod +x limit-speed
-chmod +x renewvmess
-chmod +x renewvmessgrpc
-chmod +x renewvmesshdua
-chmod +x renewvmesshttp
-chmod +x renewvless
-chmod +x renewvlesshdua
-chmod +x renewvlessgrpc
-chmod +x renewvlessxtls
-chmod +x renewxrayss
-chmod +x renewtrojan
-chmod +x renewvlesshttp
-chmod +x renewxtlstrojan
-chmod +x renewgrpctrojan
-chmod +x renewtrojanwss
-chmod +x renewtrojanhttp
-chmod +x renewtrojanhdua
-chmod +x renewvmesskcp
-chmod +x renewtrojanquic
-chmod +x renewvlessquic
-
-chmod +x cekvmesskcp
-chmod +x cektrojanquic
-chmod +x cekvlessquic
-chmod +x cekvmesshdua
-chmod +x cekvmesshttp
-chmod +x cekvlesshttp
-chmod +x cekvlesshdua
-chmod +x cekvmess
-chmod +x cekvmessgrpc
-chmod +x cekvless
-chmod +x cekvlessgrpc
-chmod +x cekvlessxtls
-chmod +x cekxrayss
-chmod +x cekxtlstrojan
-chmod +x cekgrpctrojan
-chmod +x cektrojanwss
-chmod +x cektrojanhttp
-chmod +x cektrojan
-chmod +x cektrojanhdua
-
-chmod +x certv2ray
-chmod +x addtrgo
-chmod +x deltrgo
-chmod +x renewtrgo
-chmod +x cektrgo
 echo "0 4 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "0 1 * * * root delexp" >> /etc/crontab
