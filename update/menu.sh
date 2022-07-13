@@ -75,8 +75,4 @@ k)
 clear
 menuu
 ;;
-*)
-clear
-menu
-;;
 esac
