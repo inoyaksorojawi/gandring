@@ -1,5 +1,5 @@
 #!/bin/bash
-# wisnucokrosatrio
+# My Telegram : https://t.me/zerossl
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -45,7 +45,8 @@ check_pid(){
 	PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
 }
 Add_iptables(){
-		
+		iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 21001-21500 -j ACCEPT
+		iptables -I INPUT -m state --state NEW -m udp -p udp --dport 21001:21500 -j ACCEPT
 }
 Save_iptables(){
 if [[ ${OS} == "centos" ]]; then
