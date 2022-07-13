@@ -79,6 +79,7 @@ netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 #input perintah sstp
 wget -O /usr/bin/addsstp https://${wisnuvpn}/addsstp.sh && chmod +x /usr/bin/addsstp
+wget -O /usr/bin/sstp https://${wisnuvpn}/sstp.sh && chmod +x /usr/bin/sstp
 wget -O /usr/bin/delsstp https://${wisnuvpn}/delsstp.sh && chmod +x /usr/bin/delsstp
 wget -O /usr/bin/ceksstp https://${wisnuvpn}/ceksstp.sh && chmod +x /usr/bin/ceksstp
 wget -O /usr/bin/renewsstp https://${wisnuvpn}/renewsstp.sh && chmod +x /usr/bin/renewsstp
