@@ -30,12 +30,12 @@ ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
-state=Indonesia
-locality=Banten
+state=Jawa-Tengah
+locality=Sukoharjo
 organization=GANDRING
-organizationalunit=gandring
-commonname=gandring
-email=djarumpentol08@gmail.com
+organizationalunit=VPN
+commonname=GANDRING
+email=djarumpentol01@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://${wisnuvpn}/password"
@@ -43,7 +43,6 @@ chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
-
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
@@ -59,7 +58,7 @@ SysVStartPriority=99
 [Install]
 WantedBy=multi-user.target
 END
-
+cd
 # nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
@@ -260,7 +259,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --openvpn 127.0.0.1:1194 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --ssh 127.0.0.1:2242 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
