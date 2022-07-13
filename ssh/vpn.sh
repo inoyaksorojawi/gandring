@@ -52,12 +52,12 @@ systemctl enable --now openvpn-server@server-udp
 echo 1 > /proc/sys/net/ipv4/ip_forward
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
-# Buat config client TCP 1194
+# Buat config client TCP 700
 cat > /etc/openvpn/tcp.ovpn <<-END
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 1194
+remote xxxxxxxxx 700
 resolv-retry infinite
 route-method exe
 nobind
@@ -70,12 +70,12 @@ END
 
 sed -i $MYIP2 /etc/openvpn/tcp.ovpn;
 
-# Buat config client UDP 2200
+# Buat config client UDP 800
 cat > /etc/openvpn/udp.ovpn <<-END
 client
 dev tun
 proto udp
-remote xxxxxxxxx 2200
+remote xxxxxxxxx 800
 resolv-retry infinite
 route-method exe
 nobind
@@ -88,12 +88,12 @@ END
 
 sed -i $MYIP2 /etc/openvpn/udp.ovpn;
 
-# Buat config client SSL
+# Buat config client SSL 900
 cat > /etc/openvpn/ssl.ovpn <<-END
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 990
+remote xxxxxxxxx 900
 resolv-retry infinite
 route-method exe
 nobind
@@ -110,7 +110,7 @@ cd
 # pada tulisan xxx ganti dengan alamat ip address VPS anda 
 /etc/init.d/openvpn restart
 
-# masukkan certificatenya ke dalam config client TCP 1194
+# masukkan certificatenya ke dalam config client TCP 700
 echo '<ca>' >> /etc/openvpn/tcp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/tcp.ovpn
 echo '</ca>' >> /etc/openvpn/tcp.ovpn
@@ -118,7 +118,7 @@ echo '</ca>' >> /etc/openvpn/tcp.ovpn
 # Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
 cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
 
-# masukkan certificatenya ke dalam config client UDP 2200
+# masukkan certificatenya ke dalam config client UDP 800
 echo '<ca>' >> /etc/openvpn/udp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/udp.ovpn
 echo '</ca>' >> /etc/openvpn/udp.ovpn
