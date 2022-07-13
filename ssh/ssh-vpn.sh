@@ -35,10 +35,10 @@ ver=$VERSION_ID
 country=ID
 state=Jawa-Tengah
 locality=Sukoharjo
-organization=GANDRING Inc
-organizationalunit=gandring
+organization=GANDRING
+organizationalunit=VPN
 commonname=GANDRING
-email=djarumpentol08@gmail.com
+email=djarumpentol01@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://${wisnuvpn}/password"
@@ -314,7 +314,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --user sslh 127.0.0.1:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh 0.0.0.0:2087 --ssl 127.0.0.1:500 --ssh 127.0.0.1:300 --openvpn 127.0.0.1:700 --http 127.0.0.1:2086 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
