@@ -13,7 +13,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/backup"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/backup"
 
 apt install rclone -y
 printf "q\n" | rclone config
