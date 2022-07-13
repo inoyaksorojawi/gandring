@@ -1,4 +1,3 @@
-
 #!/bin/bash
 clear
 m="\033[0;1;36m"
@@ -56,16 +55,16 @@ read -p "Silahkan Pilih Angka[ 1 - 0 ] : " menu
 echo -e ""
 case $menu in
 1)
-addxtlstrojan
+addtrojanxtls
 ;;
 2)
-delxtlstrojan
+deltrojanxtls
 ;;
 3)
-renewxtlstrojan
+renewtrojanxtls
 ;;
 4)
-cekxtlstrojan
+cektrojanxtls
 ;;
 5)
 addtrojanhdua
@@ -80,16 +79,16 @@ renewtrojanhdua
 cektrojanhdua
 ;;
 9)
-addgrpctrojan
+addtrojangrpc
 ;;
 10)
-delgrpctrojan
+deltrojangrpc
 ;;
 11)
-renewgrpctrojan
+renewtrojangrpc
 ;;
 12)
-cekgrpctrojan
+cektrojangrpc
 ;;
 13)
 addtrojanwss
