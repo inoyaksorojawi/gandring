@@ -16,7 +16,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
  ==========================================
 #Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/wireguard"
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
