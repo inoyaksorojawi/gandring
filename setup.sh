@@ -127,7 +127,7 @@ echo " 🔰 WIREGUARD : 591" |tee -a log-install.txt
 echo " 🔰 L2TP/IPSEC VPN : 1443" |tee -a log-install.txt
 echo " 🔰 PPTP VPN : 1444" |tee -a log-install.txt
 echo " 🔰 SSTP VPN : 666" |tee -a log-install.txt
-echo " 🔰 Shadowsocks-R : 21500-22000" |tee -a log-install.txt
+echo " 🔰 Shadowsocks-R : 21001-21500" |tee -a log-install.txt
 echo " 🔰 SS-OBFS TLS : 20000-20500" |tee -a log-install.txt
 echo " 🔰 SS-OBFS HTTP : 20501-21000" |tee -a log-install.txt
 echo " 🔰 XRAY SHADOWSOCKS : 333" |tee -a log-install.txt
