@@ -1,5 +1,5 @@
 #!/bin/bash
-# SL
+# wisnucokrosatrio
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -16,7 +16,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 
 # ==================================================
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/ssh"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/ssh"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
