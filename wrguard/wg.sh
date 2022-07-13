@@ -135,7 +135,9 @@ systemctl daemon-reload
 systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 systemctl restart wg-quick@wg0
-
+# Check if WireGuard is running
+systemctl is-active --quiet "wg-quick@wg0"
+WG_RUNNING=$?
 # Tambahan
 wget -q -O /usr/bin/addwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/addwg.sh" && chmod +x /usr/bin/addwg
 wget -q -O /usr/bin/delwg "https://raw.githubusercontent.com/inoyaksorojawi/gandring/master/wrguard/delwg.sh" && chmod +x /usr/bin/delwg
