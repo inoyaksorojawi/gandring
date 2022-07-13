@@ -15,10 +15,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
 wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/ssh"
-# Link Hosting Kalian Untuk Xray
-wisnuvpnn="raw.githubusercontent.com/pengkol/gandring/master/xray"
-# Link Hosting Kalian Untuk Trojan Go
-wisnuvpnnn="raw.githubusercontent.com/pengkol/gandring/master/trojango"
+
 # Link Hosting Kalian Untuk Stunnel5
 wisnuvpnnnn="raw.githubusercontent.com/pengkol/gandring/master/stunnel5"
 # Link Hosting Kalian Untuk Update
