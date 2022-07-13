@@ -115,9 +115,9 @@ echo "--------------------------------------------------------------------------
 echo ""  | tee -a log-install.txt
 echo " 🔰 >>> Service & Port" |tee -a log-install.txt
 echo " 🔰 PORT OPENSSH : 22" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN TCP : 1194" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN UDP : 1195" |tee -a log-install.txt
-echo " 🔰 PORT OPENVPN SSL : 990" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN TCP : 700" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN UDP : 800" |tee -a log-install.txt
+echo " 🔰 PORT OPENVPN SSL : 900" |tee -a log-install.txt
 echo " 🔰 PORT STUNNEL5 : 2087, 500, 600" |tee -a log-install.txt
 echo " 🔰 PORT DROPBEAR : 200, 300" |tee -a log-install.txt
 echo " 🔰 PORT SQUID : 3128, 3228" |tee -a log-install.txt
@@ -132,8 +132,8 @@ echo " 🔰 SS-OBFS TLS : 2444-2943" |tee -a log-install.txt
 echo " 🔰 SS-OBFS HTTP : 2944-3442" |tee -a log-install.txt
 echo " 🔰 XRAY SHADOWSOCKS : 333" |tee -a log-install.txt
 echo " 🔰 XRAY MTPROTO : 111" |tee -a log-install.txt
-echo " 🔰 WEBSOCKET TLS : 222" |tee -a log-install.txt
-echo " 🔰 WEBSOCKET NON TLS : 80" |tee -a log-install.txt
+echo " 🔰 WEBSOCKET TLS : 2087" |tee -a log-install.txt
+echo " 🔰 WEBSOCKET NON TLS : 2086" |tee -a log-install.txt
 echo " 🔰 PORT OVPNWS : 8080" |tee -a log-install.txt
 echo " 🔰 OHP SSH : 8181" |tee -a log-install.txt
 echo " 🔰 OHP Dropbear : 8282" |tee -a log-install.txt
