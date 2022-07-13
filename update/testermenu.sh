@@ -1,5 +1,6 @@
 #!/bin/bash
-clear
+# wisnucokrosatrio
+===========
 m="\033[0;1;36m"
 y="\033[0;1;37m"
 yy="\033[0;1;32m"
@@ -39,27 +40,27 @@ read -p " ⇱ Silahkan Pilih Angka [ 1 - 0 ] ⇲: " menu
 case $menu in
 1)
 clear
-addnewtr
+addtrojantester
 ;;
 2)
 clear
-delnewtr
+deltrojantester
 ;;
 3)
 clear
-addnewvless
+addvlesstester
 ;;
 4)
 clear
-delnewvless
+delvlesstester
 ;;
 5)
 clear
-addnewvmess
+addvmesstester
 ;;
 6)
 clear
-delnewvmess
+delvmesstester
 ;;
 7)
 clear
@@ -80,9 +81,5 @@ menu
 x)
 clear
 exit
-;;
-*)
-clear
-menu
 ;;
 esac
