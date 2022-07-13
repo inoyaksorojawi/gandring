@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/sstp"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/sstp"
 
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -43,8 +43,8 @@ country=ID
 state=Indonesia
 locality=Banten
 organization=GANDRING
-organizationalunit=gandring
-commonname=gandring
+organizationalunit=VPN
+commonname=GANDRING
 email=inoyaksorojawi@gmail.com
 
 #install sstp
