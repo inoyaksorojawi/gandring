@@ -196,18 +196,30 @@ cd
 cd
 wget -O /usr/bin/badvpn-udpgw "https://${wisnuvpn}/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
-sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 100' /etc/rc.local
+sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 100' /etc/rc.local
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 100
 
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 2253' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 2242' /etc/ssh/sshd_config
 echo "Port 22" >> /etc/ssh/sshd_config
-echo "Port 42" >> /etc/ssh/sshd_config
+echo "Port 2242" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 # install dropbear
@@ -409,7 +421,7 @@ wget -O restart "https://${wisnuvpn}/restart.sh"
 wget -O addhost "https://${wisnuvpn}/addhost.sh"
 wget -O about "https://${wisnuvpn}/about.sh"
 wget -O addssh "https://${wisnuvpn}/addssh.sh"
-#wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
+wget -O limit-speed "https://${wisnuvpn}/limit-speed.sh"
 wget -O trialssh "https://${wisnuvpn}/trialssh.sh"
 wget -O menuu "https://${wisnuvpn}/menuu.sh"
 wget -O delssh "https://${wisnuvpn}/delssh.sh"
@@ -429,7 +441,6 @@ wget -O changeport "https://${wisnuvpn}/changeport.sh"
 wget -O wbmn "https://${wisnuvpn}/webmin.sh"
 wget -O xp "https://${wisnuvpn}/xp.sh"
 wget -O swapkvm "https://${wisnuvpn}/swapkvm.sh"
-
 wget -O portovpn "https://${wisnuvpn}/portovpn.sh"
 wget -O portwg "https://${wisnuvpn}/portwg.sh"
 wget -O porttrojan "https://${wisnuvpn}/porttrojan.sh"
@@ -443,107 +454,6 @@ wget -O portdropbear "https://${wisnuvpn}/portdropbear.sh"
 wget -O portopenssh "https://${wisnuvpn}/portopenssh.sh"
 wget -O portsshnontls "https://${wisnuvpn}/portsshnontls.sh"
 wget -O portsshwstls "https://${wisnuvpn}/portsshwstls.sh"
-
-wget -O addvmess "https://${wisnuvpnn}/addvmess.sh"
-wget -O addnewtr "https://${wisnuvpnn}/addnewtr.sh"
-wget -O addvmessgrpc "https://${wisnuvpnn}/addvmessgrpc.sh"
-wget -O addvmesshdua "https://${wisnuvpnn}/addvmesshdua.sh"
-wget -O addvmesshttp "https://${wisnuvpnn}/addvmesshttp.sh"
-wget -O addvlessxtls "https://${wisnuvpnn}/addvlessxtls.sh"
-wget -O addvlesshttp "https://${wisnuvpnn}/addvlesshttp.sh"
-wget -O addvlesshdua "https://${wisnuvpnn}/addvlesshdua.sh"
-wget -O addxrayss "https://${wisnuvpnn}/addxrayss.sh"
-wget -O addvless "https://${wisnuvpnn}/addvless.sh"
-wget -O addvlessgrpc "https://${wisnuvpnn}/addvlessgrpc.sh"
-wget -O addtrojan "https://${wisnuvpnn}/addtrojan.sh"
-wget -O addxtlstrojan "https://${wisnuvpnn}/addxtlstrojan.sh"
-wget -O addgrpctrojan "https://${wisnuvpnn}/addgrpctrojan.sh"
-wget -O addtrojanwss "https://${wisnuvpnn}/addtrojanwss.sh"
-wget -O addtrojanhttp "https://${wisnuvpnn}/addtrojanhttp.sh"
-wget -O addtrojanhdua "https://${wisnuvpnn}/addtrojanhdua.sh"
-wget -O addxrayss "https://${wisnuvpnn}/addxrayss.sh"
-wget -O addnewtr "https://${wisnuvpnn}/addnewtr.sh"
-wget -O addnewvmess "https://${wisnuvpnn}/addnewvmess.sh"
-wget -O addnewvless "https://${wisnuvpnn}/addnewvless.sh"
-wget -O addxtreme "https://${wisnuvpnn}/addxtreme.sh"
-wget -O addvmessquic "https://${wisnuvpnn}/addvmessquic.sh"
-wget -O addvlessquic "https://${wisnuvpnn}/addvlessquic.sh"
-wget -O addtrojanquic "https://${wisnuvpnn}/addtrojanquic.sh"
-
-wget -O delvmessquic "https://${wisnuvpnn}/delvmessquic.sh"
-wget -O delvlessquic "https://${wisnuvpnn}/delvlessquic.sh"
-wget -O deltrojanquic "https://${wisnuvpnn}/deltrojanquic.sh"
-wget -O delxrayss "https://${wisnuvpnn}/delxrayss.sh"
-wget -O delvmess "https://${wisnuvpnn}/delvmess.sh"
-wget -O delnewvmess "https://${wisnuvpnn}/delnewvmess.sh"
-wget -O delnewvless "https://${wisnuvpnn}/delnewvless.sh"
-wget -O delnewtr "https://${wisnuvpnn}/delnewtr.sh"
-wget -O delvmessgrpc "https://${wisnuvpnn}/delvmessgrpc.sh"
-wget -O delvmesshdua "https://${wisnuvpnn}/delvmesshdua.sh"
-wget -O delvmesshttp "https://${wisnuvpnn}/delvmesshttp.sh"
-wget -O delvlessxtls "https://${wisnuvpnn}/delvlessxtls.sh"
-wget -O delvlesshttp "https://${wisnuvpnn}/delvlesshttp.sh"
-wget -O delvlesshdua "https://${wisnuvpnn}/delvlesshdua.sh"
-wget -O delxrayss "https://${wisnuvpnn}/delxrayss.sh"
-wget -O delvless "https://${wisnuvpnn}/delvless.sh"
-wget -O delvlessgrpc "https://${wisnuvpnn}/delvlessgrpc.sh"
-wget -O deltrojan "https://${wisnuvpnn}/deltrojan.sh"
-wget -O delxtlstrojan "https://${wisnuvpnn}/delxtlstrojan.sh"
-wget -O delgrpctrojan "https://${wisnuvpnn}/delgrpctrojan.sh"
-wget -O deltrojanwss "https://${wisnuvpnn}/deltrojanwss.sh"
-wget -O deltrojanhdua "https://${wisnuvpnn}/deltrojanhdua.sh"
-wget -O deltrojanhttp "https://${wisnuvpnn}/deltrojanhttp.sh"
-wget -O delxtreme "https://${wisnuvpnn}/delxtreme.sh"
-
-wget -O cekvmessquic "https://${wisnuvpnn}/cekvmessquic.sh"
-wget -O cekvlessquic "https://${wisnuvpnn}/cekvlessquic.sh"
-wget -O cektrojanquic "https://${wisnuvpnn}/cektrojanquic.sh"
-wget -O cekvmess "https://${wisnuvpnn}/cekvmess.sh"
-wget -O cekvmessgrpc "https://${wisnuvpnn}/cekvmessgrpc.sh"
-wget -O cekvmesshdua "https://${wisnuvpnn}/cekvmesshdua.sh"
-wget -O cekvmesshttp "https://${wisnuvpnn}/cekvmesshttp.sh"
-wget -O cekvlessxtls "https://${wisnuvpnn}/cekvlessxtls.sh"
-wget -O cekvlesshttp "https://${wisnuvpnn}/cekvlesshttp.sh"
-wget -O cekvlesshdua "https://${wisnuvpnn}/cekvlesshdua.sh"
-wget -O cekxrayss "https://${wisnuvpnn}/cekxrayss.sh"
-wget -O cekvless "https://${wisnuvpnn}/cekvless.sh"
-wget -O cekvlessgrpc "https://${wisnuvpnn}/cekvlessgrpc.sh"
-wget -O cektrojan "https://${wisnuvpnn}/cektrojan.sh"
-wget -O cekxtlstrojan "https://${wisnuvpnn}/cekxtlstrojan.sh"
-wget -O cekgrpctrojan "https://${wisnuvpnn}/cekgrpctrojan.sh"
-wget -O cektrojanwss "https://${wisnuvpnn}/cektrojanwss.sh"
-wget -O cektrojanhttp "https://${wisnuvpnn}/cektrojanhttp.sh"
-wget -O ceknewtr "https://${wisnuvpnn}/ceknewtr.sh"
-wget -O cekxrayss "https://${wisnuvpnn}/cekxrayss.sh"
-wget -O cektrojanhdua "https://${wisnuvpnn}/cektrojanhdua.sh"
-
-wget -O renewvmessquic "https://${wisnuvpnn}/renewvmessquic.sh"
-wget -O renewvlessquic "https://${wisnuvpnn}/renewvlessquic.sh"
-wget -O renewtrojanquic "https://${wisnuvpnn}/renewtrojanquic.sh"
-wget -O renewxrayss "https://${wisnuvpnn}/renewxrayss.sh"
-wget -O renewvmess "https://${wisnuvpnn}/renewvmess.sh"
-wget -O renewvmessgrpc "https://${wisnuvpnn}/renewvmessgrpc.sh"
-wget -O renewvmesshdua "https://${wisnuvpnn}/renewvmesshdua.sh"
-wget -O renewvmesshttp "https://${wisnuvpnn}/renewvmesshttp.sh"
-wget -O renewvlessxtls "https://${wisnuvpnn}/renewvlessxtls.sh"
-wget -O renewvlesshttp "https://${wisnuvpnn}/renewvlesshttp.sh"
-wget -O renewvlesshdua "https://${wisnuvpnn}/renewvlesshdua.sh"
-wget -O renewxrayss "https://${wisnuvpnn}/renewxrayss.sh"
-wget -O renewvless "https://${wisnuvpnn}/renewvless.sh"
-wget -O renewvlessgrpc "https://${wisnuvpnn}/renewvlessgrpc.sh"
-wget -O renewtrojan "https://${wisnuvpnn}/renewtrojan.sh"
-wget -O renewxtlstrojan "https://${wisnuvpnn}/renewxtlstrojan.sh"
-wget -O renewgrpctrojan "https://${wisnuvpnn}/renewgrpctrojan.sh"
-wget -O renewtrojanwss "https://${wisnuvpnn}/renewtrojanwss.sh"
-wget -O renewtrojanhdua "https://${wisnuvpnn}/renewtrojanhdua.sh"
-wget -O renewtrojanhttp "https://${wisnuvpnn}/renewtrojanhttp.sh"
-wget -O certv2ray "https://${wisnuvpnn}/certv2ray.sh"
-
-wget -O addtrgo "https://${wisnuvpnnn}/addtrgo.sh"
-wget -O deltrgo "https://${wisnuvpnnn}/deltrgo.sh"
-wget -O renewtrgo "https://${wisnuvpnnn}/renewtrgo.sh"
-wget -O cektrgo "https://${wisnuvpnnn}/cektrgo.sh"
-
 wget -O trpcwsmenu "https://${wisnuvpnnnnn}/trpcwsmenu.sh"
 wget -O sshovpnmenu "https://${wisnuvpnnnnn}/sshovpnmenu.sh"
 #wget -O l2tpmenu "https://${wisnuvpnnnnn}/l2tpmenu.sh"
@@ -565,7 +475,6 @@ wget -O status "https://${wisnuvpnnnnn}/status.sh"
 wget -O status2 "https://${wisnuvpnnnnn}/status2.sh"
 wget -O status3 "https://${wisnuvpnnnnn}/status3.sh"
 wget -O status4 "https://${wisnuvpnnnnn}/status4.sh"
-
 chmod +x testermenu
 chmod +x ceknewtr
 chmod +x addnewtr
@@ -583,7 +492,6 @@ chmod +x status
 chmod +x status2
 chmod +x status3
 chmod +x status4
-
 chmod +x portsshnontls
 chmod +x portsshwstls
 chmod +x menuu
@@ -594,7 +502,6 @@ chmod +x l2tppmenu
 #chmod +x sstpmenu
 chmod +x wgmenu
 chmod +x ssmenu
-
 #chmod +x ssrmenu
 chmod +x vmessmenu
 chmod +x vlessmenu
@@ -621,7 +528,6 @@ chmod +x ceklim
 chmod +x ram
 chmod +x renewssh
 chmod +x clearlog
-
 chmod +x changeport
 chmod +x portovpn
 chmod +x portwg
@@ -631,11 +537,10 @@ chmod +x portgrpc
 chmod +x portsstp
 chmod +x portsquid
 chmod +x portvlm
-
-chmod +x wbmn
 chmod +x xp
+chmod +x wbmn
 chmod +x swapkvm
-
+chmod +x limit-speed
 echo "0 4 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "0 1 * * * root delexp" >> /etc/crontab
@@ -663,9 +568,15 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/vnstat restart
 /etc/init.d/fail2ban restart
 #/etc/init.d/squid restart
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 100
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 100
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
