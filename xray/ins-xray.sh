@@ -10,6 +10,10 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 
+# Link Hosting Kalian Untuk Xray
+wisnuvpnn="raw.githubusercontent.com/pengkol/gandring/master/xray"
+# Link Hosting Kalian Untuk Trojan Go
+wisnuvpnnn="raw.githubusercontent.com/pengkol/gandring/master/trojango"
 MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 domain=$(cat /root/domain)
@@ -878,8 +882,8 @@ wget -O addvless "https://${wisnuvpnn}/addvless.sh"
 wget -O addvlessgrpc "https://${wisnuvpnn}/addvlessgrpc.sh"
 wget -O addvlessquic "https://${wisnuvpnn}/addvlessquic.sh"
 wget -O addtrojan "https://${wisnuvpnn}/addtrojan.sh"
-wget -O addxtlstrojan "https://${wisnuvpnn}/addxtlstrojan.sh"
-wget -O addgrpctrojan "https://${wisnuvpnn}/addgrpctrojan.sh"
+wget -O addtrojanxtls "https://${wisnuvpnn}/addtrojanxtls.sh"
+wget -O addtrojangrpc "https://${wisnuvpnn}/addtrojangrpc.sh"
 wget -O addtrojanwss "https://${wisnuvpnn}/addtrojanwss.sh"
 wget -O addtrojanhttp "https://${wisnuvpnn}/addtrojanhttp.sh"
 wget -O addtrojanhdua "https://${wisnuvpnn}/addtrojanhdua.sh"
@@ -920,16 +924,16 @@ wget -O cekvlesshdua "https://${wisnuvpnn}/cekvlesshdua.sh"
 wget -O cekvless "https://${wisnuvpnn}/cekvless.sh"
 wget -O cekvlessgrpc "https://${wisnuvpnn}/cekvlessgrpc.sh"
 wget -O cekvlessquic "https://${wisnuvpnn}/cekvlessquic.sh"
-wget -O cektrojanxtls "https://${wisnuvpnn}/cekxtlstrojan.sh"
-wget -O cektrojangrpc "https://${wisnuvpnn}/cekgrpctrojan.sh"
+wget -O cektrojanxtls "https://${wisnuvpnn}/cektrojanxtls.sh"
+wget -O cektrojangrpc "https://${wisnuvpnn}/cektrojangrpc.sh"
 wget -O cektrojanwss "https://${wisnuvpnn}/cektrojanwss.sh"
 wget -O cektrojanhttp "https://${wisnuvpnn}/cektrojanhttp.sh"
+wget -O cektrojanquic "https://${wisnuvpnn}/cektrojanquic.sh"
+wget -O cektrojanhdua "https://${wisnuvpnn}/cektrojanhdua.sh"
 wget -O ceknewtr "https://${wisnuvpnn}/ceknewtr.sh"
 wget -O ceknewvmess "https://${wisnuvpnn}/ceknewvmess.sh"
 wget -O ceknewvless "https://${wisnuvpnn}/ceknewvless.sh"
 wget -O cekxrayss "https://${wisnuvpnn}/cekxrayss.sh"
-wget -O cektrojanquic "https://${wisnuvpnn}/cektrojanquic.sh"
-wget -O cektrojanhdua "https://${wisnuvpnn}/cektrojanhdua.sh"
 chmod +x cekvmess
 chmod +x cekvmessgrpc
 chmod +x cekvmesshdua
@@ -962,8 +966,8 @@ wget -O delvless "https://${wisnuvpnn}/delvless.sh"
 wget -O delvlessgrpc "https://${wisnuvpnn}/delvlessgrpc.sh"
 wget -O delvlessquic "https://${wisnuvpnn}/delvlessquic.sh"
 wget -O deltrojanquic "https://${wisnuvpnn}/deltrojanquic.sh"
-wget -O deltrojanxtls "https://${wisnuvpnn}/delxtlstrojan.sh"
-wget -O deltrojangrpc "https://${wisnuvpnn}/delgrpctrojan.sh"
+wget -O deltrojanxtls "https://${wisnuvpnn}/deltrojanxtls.sh"
+wget -O deltrojangrpc "https://${wisnuvpnn}/deltrojangrpc.sh"
 wget -O deltrojanwss "https://${wisnuvpnn}/deltrojanwss.sh"
 wget -O deltrojanhdua "https://${wisnuvpnn}/deltrojanhdua.sh"
 wget -O deltrojanhttp "https://${wisnuvpnn}/deltrojanhttp.sh"
@@ -1028,6 +1032,10 @@ chmod +x renewtrojanhdua
 chmod +x renewtrojanquic
 chmod +x renewxrayss
 chmod +x certv2ray
+wget -O addtrgo "https://${wisnuvpnnn}/addtrgo.sh"
+wget -O deltrgo "https://${wisnuvpnnn}/deltrgo.sh"
+wget -O renewtrgo "https://${wisnuvpnnn}/renewtrgo.sh"
+wget -O cektrgo "https://${wisnuvpnnn}/cektrgo.sh"
 chmod +x addtrgo
 chmod +x deltrgo
 chmod +x renewtrgo
