@@ -57,7 +57,7 @@ sshovpnmenu
 ;;
 6)
 clear
-testermenu
+menutester
 ;;
 7)
 clear
