@@ -616,6 +616,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/config.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -636,6 +638,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/xtrojan.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -656,6 +660,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/xvless.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -675,6 +681,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /usr/local/etc/xray/xvmess.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -695,6 +703,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/xss.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -715,6 +725,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/sstcp.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -735,6 +747,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /etc/xray/trojangrpc.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -755,6 +769,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/xray -config /usr/local/etc/xray/vlessquic.json
 Restart=on-failure
 RestartSec=1s
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -776,10 +792,10 @@ sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 10808 -j ACCEP
 sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 10808 -j ACCEPT
 sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 10809 -j ACCEPT
 sudo iptables -I INPUT -m state --state NEW -m udp -p udp --dport 10809 -j ACCEPT
-iptables-save > /etc/iptables.up.rules
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
+sudo iptables-save > /etc/iptables.up.rules
+sudo iptables-restore -t < /etc/iptables.up.rules
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
 
 systemctl daemon-reload
 systemctl stop xray
@@ -930,6 +946,8 @@ NoNewPrivileges=true
 ExecStart=/usr/local/bin/trojan-go -config /etc/trojan-go/config.json
 Restart=on-failure
 RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
