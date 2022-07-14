@@ -129,8 +129,8 @@ echo "
 server {
     listen 80 ;
     listen [::]:80 ;
-    access_log /var/log/nginx/vps-access.log;
-    error_log /var/log/nginx/vps-error.log error;
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
     
     location /shanumgrpc
        {
