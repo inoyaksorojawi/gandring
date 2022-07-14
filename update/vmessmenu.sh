@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+# wisnucokrosatrio
 m="\033[0;1;36m"
 y="\033[0;1;37m"
 yy="\033[0;1;32m"
@@ -104,15 +104,9 @@ cekvmesshttp
 #cekvmessquic
 #;;
 0)
-clear
 menu
 ;;
 x)
-clear
 exit
-;;
-*)
-clear
-menu
 ;;
 esac
