@@ -1,6 +1,5 @@
 #!/bin/bash
 # wisnucokrosatrio
-===========
 m="\033[0;1;36m"
 y="\033[0;1;37m"
 yy="\033[0;1;32m"
@@ -39,40 +38,31 @@ echo -e "\e[1;36m ⇱ Select Number From [ 1 - 0 ] ⇲ \e[m"
 read -p " ⇱ Silahkan Pilih Angka [ 1 - 0 ] ⇲: " menu
 case $menu in
 1)
-clear
 addtrojantester
 ;;
 2)
-clear
 deltrojantester
 ;;
 3)
-clear
 addvlesstester
 ;;
 4)
-clear
 delvlesstester
 ;;
 5)
-clear
 addvmesstester
 ;;
 6)
-clear
 delvmesstester
 ;;
 7)
-clear
 addxtreme
 ;;
 8)
-clear
 delxtreme
 ;;
 9)
-clear
-ceknewtr
+cektrojantester
 ;;
 0)
 clear
@@ -81,5 +71,9 @@ menu
 x)
 clear
 exit
+;;
+*)
+clear
+menu
 ;;
 esac
