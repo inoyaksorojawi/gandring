@@ -237,6 +237,35 @@ apt -y install squid
 wget -O /etc/squid/squid.conf "https://${wisnuvpn}/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
+cat > /lib/systemd/system/squid.service << EOF
+## Copyright (C) 1996-2019 The Squid Software Foundation and contributors
+##
+## Squid software is distributed under GPLv2+ license and includes
+## contributions from numerous individuals and organizations.
+## Please see the COPYING and CONTRIBUTORS files for details.
+##
+
+[Unit]
+Description=SQUID4 WEB PROXY ACTIVATED BY SHANUM
+Documentation=man:squid(8)
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/squid.pid
+ExecStartPre=/usr/sbin/squid --foreground -z
+ExecStart=/usr/sbin/squid -sYC
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+
+EOF
+
+systemctl daemon-reload
+systemctl enable squid
+
 # Install SSLH
 apt -y install sslh
 rm -f /etc/default/sslh
@@ -469,13 +498,13 @@ wget -O vlessmenu "https://${wisnuvpnnnnn}/vlessmenu.sh"
 wget -O trghmenu "https://${wisnuvpnnnnn}/trghmenu.sh"
 wget -O trxtmenu "https://${wisnuvpnnnnn}/trxtmenu.sh"
 wget -O setmenu "https://${wisnuvpnnnnn}/setmenu.sh"
-wget -O testermenu "https://${wisnuvpnnnnn}/testermenu.sh"
+wget -O menutester "https://${wisnuvpnnnnn}/menutester.sh"
 wget -O menu "https://${wisnuvpnnnnn}/menu.sh"
 wget -O status "https://${wisnuvpnnnnn}/status.sh"
 wget -O status2 "https://${wisnuvpnnnnn}/status2.sh"
 wget -O status3 "https://${wisnuvpnnnnn}/status3.sh"
 wget -O status4 "https://${wisnuvpnnnnn}/status4.sh"
-chmod +x testermenu
+chmod +x menutester
 chmod +x ceknewtr
 chmod +x addnewtr
 chmod +x addxrayss
@@ -544,7 +573,6 @@ chmod +x limit-speed
 echo "0 4 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "0 1 * * * root delexp" >> /etc/crontab
-
 # remove unnecessary files
 cd
 apt autoclean -y
