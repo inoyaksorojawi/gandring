@@ -61,7 +61,7 @@ curl https://get.acme.sh | sh
 alias acme.sh=~/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-/root/.acme.sh/acme.sh --issue -d "${domain}" --standalone --keylength ec-512
+/root/.acme.sh/acme.sh --issue -d "${domain}" --standalone --keylength ec-384
 /root/.acme.sh/acme.sh --install-cert -d "${domain}" --ecc \
 --fullchain-file /etc/ssl/private/fullchain.pem \
 --key-file /etc/ssl/private/privkey.pem
@@ -117,8 +117,7 @@ elif [[ $OS == 'debian' ]]; then
         curl -o /tmp/nginx_signing.key https://nginx.org/keys/nginx_signing.key 
         # gpg --dry-run --quiet --import --import-options import-show /tmp/nginx_signing.key
         sudo mv /tmp/nginx_signing.key /etc/apt/trusted.gpg.d/nginx_signing.asc
-        sudo apt update 
-        apt -y install nginx
+        sudo apt update
         systemctl daemon-reload
         systemctl enable nginx
 fi
