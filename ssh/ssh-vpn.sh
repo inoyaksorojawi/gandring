@@ -176,7 +176,6 @@ echo "clear" >> .profile
 echo "status" >> .profile
 
 # install webserver
-apt -y install php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://${wisnuvpn}/nginx.conf > /etc/nginx/nginx.conf
