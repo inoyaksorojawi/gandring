@@ -176,7 +176,7 @@ echo "clear" >> .profile
 echo "status" >> .profile
 
 # install webserver
-apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+apt -y install php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://${wisnuvpn}/nginx.conf > /etc/nginx/nginx.conf
@@ -188,7 +188,7 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://${wisnuvpn}/index.html1"
+wget -O /home/vps/public_html/index.html "https://${wisnuvpn}/index.html"
 /etc/init.d/nginx restart
 cd
 
