@@ -93,7 +93,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-cat > /etc/systemd/system/wg-quick@.service << END
+cat > /etc/systemd/system/wg-quick@wg0.service << END
 [Unit]
 Description=WireGuard ROUTING DAM COLO PENGKOL BY GANDRING
 After=network-online.target nss-lookup.target
@@ -118,8 +118,10 @@ WantedBy=multi-user.target
 
 END
 
-systemctl start "wg-quick@wg0"
-systemctl enable "wg-quick@wg0"
+systemctl daemon-reload
+systemctl enable wg-quick@wg0
+systemctl start wg-quick@wg0
+systemctl restart wg-quick@wg0
 
 # Check if WireGuard is running
 systemctl is-active --quiet "wg-quick@wg0"
