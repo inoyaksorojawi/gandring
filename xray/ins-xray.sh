@@ -129,11 +129,10 @@ echo "
 server {
     listen 80 ;
     listen [::]:80 ;
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-    
-    location /shanumgrpc
-       {
+    access_log /var/log/nginx/vps-access.log;
+    error_log /var/log/nginx/vps-error.log error;
+    }
+    location /shanumgrpc {
         client_max_body_size 0;
         keepalive_time 1071906480m;
         keepalive_requests 4294967296;
@@ -143,9 +142,8 @@ server {
         grpc_read_timeout 1071906480m;
         grpc_send_timeout 1071906480m;
         grpc_pass grpc://127.0.0.1:1190;
-       }
-     location /wisnugrpc
-       {
+    }
+    location /wisnugrpc {
         client_max_body_size 0;
         keepalive_time 1071906480m;
         keepalive_requests 4294967296;
@@ -155,9 +153,8 @@ server {
         grpc_read_timeout 1071906480m;
         grpc_send_timeout 1071906480m;
         grpc_pass grpc://127.0.0.1:1160;
-       }
-    location /gandringgrpc
-       {
+    }
+    location /gandringgrpc {
         client_max_body_size 0;
         keepalive_time 1071906480m;
         keepalive_requests 4294967296;
@@ -167,7 +164,7 @@ server {
         grpc_read_timeout 1071906480m;
         grpc_send_timeout 1071906480m;
         grpc_pass grpc://127.0.0.1:1130;
-       }
+    }
 }
 " > /etc/nginx/conf.d/default.conf
 
