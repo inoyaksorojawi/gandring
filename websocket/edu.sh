@@ -4,7 +4,7 @@
 # ==========================================
 
 # Link Hosting Kalian
-wisnuvpn="raw.githubusercontent.com/inoyaksorojawi/gandring/master/websocket"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/websocket"
 
 # Getting Proxy Template
 wget -q -O /usr/local/bin/ws-nontls https://${wisnuvpn}/websocket.py
