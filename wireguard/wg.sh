@@ -19,7 +19,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/01kramik/scriptvps/main/wireguard"
+wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/wireguard"
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -40,11 +40,8 @@ fi
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[44;46m ${Info}       🔰 Wireguard Script By WISNUCOKROSATRIO 🔰                \e[m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-# Detect public IPv4 address and pre-fill for the user
-
 # Detect public interface and pre-fill for the user
 SERVER_PUB_NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-
 # Install WireGuard tools and module
 	if [[ $OS == 'ubuntu' ]]; then
 	apt install -y wireguard
@@ -105,9 +102,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://${akbarvpn}/addwg.sh"
-wget -O delwg "https://${akbarvpn}/delwg.sh"
-wget -O renewwg "https://${akbarvpn}/renewwg.sh"
+wget -O addwg "https://${wisnuvpn}/addwg.sh"
+wget -O delwg "https://${wisnuvpn}/delwg.sh"
+wget -O renewwg "https://${wisnuvpn}/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
