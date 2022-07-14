@@ -1012,6 +1012,8 @@ chmod +x addxtreme
 chmod +x addvmesstester
 chmod +x addvlesstester
 chmod +x addtrojantester
+
+cd /usr/bin
 wget -O cekvmess "https://${wisnuvpnn}/cekvmess.sh"
 wget -O cekvmessgrpc "https://${wisnuvpnn}/cekvmessgrpc.sh"
 wget -O cekvmesshdua "https://${wisnuvpnn}/cekvmesshdua.sh"
@@ -1052,6 +1054,8 @@ chmod +x cektrojanhdua
 chmod +x cekvlesstester
 chmod +x cekvmesstester
 chmod +x cektrojantester
+
+cd /usr/bin
 wget -O delvmess "https://${wisnuvpnn}/delvmess.sh"
 wget -O delvmessgrpc "https://${wisnuvpnn}/delvmessgrpc.sh"
 wget -O delvmesshdua "https://${wisnuvpnn}/delvmesshdua.sh"
@@ -1094,6 +1098,8 @@ chmod +x delvmesstester
 chmod +x delvlesstester
 chmod +x delxtreme
 chmod +x delxrayss
+
+cd /usr/bin
 wget -O renewvmess "https://${wisnuvpnn}/renewvmess.sh"
 wget -O renewvmessgrpc "https://${wisnuvpnn}/renewvmessgrpc.sh"
 wget -O renewvmesshdua "https://${wisnuvpnn}/renewvmesshdua.sh"
@@ -1130,6 +1136,8 @@ chmod +x renewtrojanhdua
 chmod +x renewtrojanquic
 chmod +x renewxrayss
 chmod +x certv2ray
+
+cd /usr/bin
 wget -O addtrgo "https://${wisnuvpnnn}/addtrgo.sh"
 wget -O deltrgo "https://${wisnuvpnnn}/deltrgo.sh"
 wget -O renewtrgo "https://${wisnuvpnnn}/renewtrgo.sh"
