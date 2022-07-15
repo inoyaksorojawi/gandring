@@ -19,7 +19,7 @@ wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/ssh"
 # Link Hosting Kalian Untuk Stunnel5
 wisnuvpnnnn="raw.githubusercontent.com/pengkol/gandring/master/stunnel5"
 # Link Hosting Kalian Untuk Update
-wisnuvpnnnnn="raw.githubusercontent.com/pengkol/gandring/master/update"
+wisnuvpnnnnn="raw.githubusercontent.com/pengkol/gandring/master/updatemenu"
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -482,20 +482,12 @@ wget -O portdropbear "https://${wisnuvpn}/portdropbear.sh"
 wget -O portopenssh "https://${wisnuvpn}/portopenssh.sh"
 wget -O portsshnontls "https://${wisnuvpn}/portsshnontls.sh"
 wget -O portsshwstls "https://${wisnuvpn}/portsshwstls.sh"
-wget -O trpcwsmenu "https://${wisnuvpnnnnn}/trpcwsmenu.sh"
 wget -O sshovpnmenu "https://${wisnuvpnnnnn}/sshovpnmenu.sh"
-#wget -O l2tpmenu "https://${wisnuvpnnnnn}/l2tpmenu.sh"
 wget -O l2tppmenu "https://${wisnuvpnnnnn}/l2tppmenu.sh"
-#wget -O pptpmenu "https://${wisnuvpnnnnn}/pptpmenu.sh"
-#wget -O sstpmenu "https://${wisnuvpnnnnn}/sstpmenu.sh"
-wget -O wgmenu "https://${wisnuvpnnnnn}/wgmenu.sh"
 wget -O ssmenu "https://${wisnuvpnnnnn}/ssmenu.sh"
-#wget -O ssrmenu "https://${wisnuvpnnnnn}/ssrmenu.sh"
 wget -O vmessmenu "https://${wisnuvpnnnnn}/vmessmenu.sh"
 wget -O vlessmenu "https://${wisnuvpnnnnn}/vlessmenu.sh"
-#wget -O grpcmenu "https://${wisnuvpnnnnn}/grpcmenu.sh"
-wget -O trghmenu "https://${wisnuvpnnnnn}/trghmenu.sh"
-wget -O trxtmenu "https://${wisnuvpnnnnn}/trxtmenu.sh"
+wget -O trojanmenu "https://${wisnuvpnnnnn}/trojanmenu.sh"
 wget -O setmenu "https://${wisnuvpnnnnn}/setmenu.sh"
 wget -O menutester "https://${wisnuvpnnnnn}/menutester.sh"
 wget -O menu "https://${wisnuvpnnnnn}/menu.sh"
@@ -504,40 +496,32 @@ wget -O status2 "https://${wisnuvpnnnnn}/status2.sh"
 wget -O status3 "https://${wisnuvpnnnnn}/status3.sh"
 wget -O status4 "https://${wisnuvpnnnnn}/status4.sh"
 chmod +x menutester
-chmod +x ceknewtr
-chmod +x addnewtr
-chmod +x addxrayss
-chmod +x addnewvmess
-chmod +x addnewvless
-chmod +x delnewtr
-chmod +x delnewvmess
-chmod +x delnewvless
 chmod +x restart
 chmod +x portdropbear
 chmod +x portopenssh
 chmod +x portstunnel5
+chmod +x portsshnontls
+chmod +x portsshwstls
+chmod +x portovpn
+chmod +x portwg
+chmod +x porttrojan
+chmod +x porttrojango
+chmod +x portgrpc
+chmod +x portsstp
+chmod +x portsquid
+chmod +x portvlm
 chmod +x status
 chmod +x status2
 chmod +x status3
 chmod +x status4
-chmod +x portsshnontls
-chmod +x portsshwstls
 chmod +x menuu
 chmod +x sshovpnmenu
-#chmod +x l2tpmenu
 chmod +x l2tppmenu
-#chmod +x pptpmenu
-#chmod +x sstpmenu
 chmod +x wgmenu
 chmod +x ssmenu
-#chmod +x ssrmenu
 chmod +x vmessmenu
-chmod +x vlessmenu
-#chmod +x grpcmenu
-chmod +x trxtmenu
-chmod +x trpcwsmenu
+chmod +x trojanmenu
 chmod +x setmenu
-chmod +x trghmenu
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -557,14 +541,6 @@ chmod +x ram
 chmod +x renewssh
 chmod +x clearlog
 chmod +x changeport
-chmod +x portovpn
-chmod +x portwg
-chmod +x porttrojan
-chmod +x porttrojango
-chmod +x portgrpc
-chmod +x portsstp
-chmod +x portsquid
-chmod +x portvlm
 chmod +x xp
 chmod +x wbmn
 chmod +x swapkvm
