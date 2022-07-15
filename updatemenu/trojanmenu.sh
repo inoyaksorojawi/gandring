@@ -2,6 +2,7 @@
 # wisnu
 clear
 #cat /usr/bin/bannerTROJAN | lolcat
+echo -e ""
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[43;1;46m   🔰 MENU TROJAN XTLS GFW H2C GRPC WS HTTP & GO 🔰     \e[0m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -45,7 +46,6 @@ echo -e "xx\e[1;31m) Keluar \e[m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[43;1;46m             🔰 LUXURY EDITION BY ZEROSSL 🔰            \e[0m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[1;36m) Select Number From [ 1 - 0 ] \e[m"
 read -p "Silahkan Pilih Angka[ 1 - 0 ] : " menu
 echo -e ""
 case $menu in
@@ -137,6 +137,11 @@ cektrojanquic
 menu
 ;;
 x)
+clear
 exit
+;;
+*)
+clear
+menu
 ;;
 esac
