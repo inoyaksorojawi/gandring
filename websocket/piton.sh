@@ -7,7 +7,7 @@
 wisnuvpn="raw.githubusercontent.com/pengkol/gandring/master/websocket"
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-nontls https://${wisnuvpn}/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://${wisnuvpn}/ws-nontls.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service
