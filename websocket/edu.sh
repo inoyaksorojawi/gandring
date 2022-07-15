@@ -25,8 +25,6 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/usr/bin/python -O /usr/local/bin/ws-nontls 2086
 Restart=on-failure
-LimitNPROC=10000
-LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -55,8 +53,6 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpn 8080
 Restart=on-failure
-LimitNPROC=10000
-LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
@@ -65,35 +61,6 @@ END
 systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
-
-# Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpntls https://${wisnuvpn}/ws-ovpntls.py
-chmod +x /usr/local/bin/ws-ovpntls
-# Installing Service
-cat > /etc/systemd/system/ws-ovpntls.service << END
-[Unit]
-Description=WEBSOCKET OVPN ROUTING DAM COLO PENGKOL BY SHANUM
-Documentation=https://t.me/zerossl
-After=network.target nss-lookup.target
-
-[Service]
-Type=simple
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-ovpntls
-Restart=on-failure
-LimitNPROC=10000
-LimitNOFILE=1000000
-
-[Install]
-WantedBy=multi-user.target
-END
-
-systemctl daemon-reload
-systemctl enable ws-ovpntls
-systemctl restart ws-ovpntls
 
 # Getting Proxy Template
 wget -q -O /usr/local/bin/ws-tls https://${wisnuvpn}/ws-tls.py
@@ -114,8 +81,6 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/usr/bin/python -O /usr/local/bin/ws-tls 2087
 Restart=on-failure
-LimitNPROC=10000
-LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
