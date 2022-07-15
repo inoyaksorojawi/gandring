@@ -12,16 +12,10 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-
 domain=$(cat /etc/xray/domain)
-sldomain=$(cat /root/nsdomain)
-cdndomain=$(cat /root/awscdndomain)
-slkey=$(cat /etc/slowdns/server.pub)
-clear
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (Days): " masaaktif
-
 IP=$(wget -qO- ipinfo.io/ip);
 ws="$(cat ~/log-install.txt | grep -w "WEBSOCKET TLS" | cut -d: -f2|sed 's/ //g')"
 otcp="$(cat ~/log-install.txt | grep -w "PORT OPENVPN TCP" | cut -d: -f2|sed 's/ //g')"
@@ -37,19 +31,9 @@ sqd="$(cat ~/log-install.txt | grep -w "PORT SQUID" | cut -d: -f2)"
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn3="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
-clear
-#systemctl stop client-sldns
-#systemctl stop server-sldns
-pkill sldns-server
-pkill sldns-client
-#systemctl enable client-sldns
-#systemctl enable server-sldns
-#systemctl start client-sldns
-#systemctl start server-sldns
-#systemctl restart client-sldns
-#systemctl restart server-sldns
 systemctl restart ws-tls
 systemctl restart ws-nontls
+systemctl restart ws-ovpn
 systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
