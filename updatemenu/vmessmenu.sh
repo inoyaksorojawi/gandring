@@ -1,6 +1,7 @@
 #!/bin/bash
 # wisnucokrosatrio
 #cat /usr/bin/bannerVLESS | lolcat
+echo -e ""
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[43;1;46m               🔰 MENU LAYANAN VMESS 🔰                 \e[0m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -86,22 +87,14 @@ renewvmesshttp
 16)
 cekvmesshttp
 ;;
-#17)
-#addvmessquic
-#;;
-#18)
-#delvmessquic
-#;;
-#19)
-#renewvmessquic
-#;;
-#20)
-#cekvmessquic
-#;;
 0)
 menu
 ;;
 x)
+clear
 exit
+*)
+clear
+menu
 ;;
 esac
