@@ -16,13 +16,13 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 # Load params
 source /etc/wireguard/params
-source /var/lib/akbarstorevpn/ipvps.conf
+source /var/lib/wisnucs/ipvps.conf
 if [[ "$IP" = "" ]]; then
 SERVER_PUB_IP=$(wget -qO- ipinfo.io/ip);
 else
 SERVER_PUB_IP=$IP
 fi
-source /var/lib/akbarstorevpn/ipvps.conf
+source /var/lib/wisnucs/ipvps.conf
 if [[ "$IP2" = "" ]]; then
 #domain=$(cat /etc/xray/domain)
 domain=$(cat /etc/xray/domain)
@@ -30,7 +30,7 @@ else
 domain=$IP2
 fi
 echo ""
-portwg="$(cat ~/log-install.txt | grep -w "Wireguard" | cut -d: -f2|sed 's/ //g')"
+portwg="$(cat ~/log-install.txt | grep -w "WIREGUARD" | cut -d: -f2|sed 's/ //g')"
 until [[ ${CLIENT_NAME} =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	read -rp "Username : " -e CLIENT_NAME
 	CLIENT_EXISTS=$(grep -w $CLIENT_NAME /etc/wireguard/wg0.conf | wc -l)
