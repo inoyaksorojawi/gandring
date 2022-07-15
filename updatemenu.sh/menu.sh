@@ -42,7 +42,7 @@ vmessmenu
 vlessmenu
 ;;
 3)
-trxtmenu
+trojanmenu
 ;;
 4)
 ssmenu
