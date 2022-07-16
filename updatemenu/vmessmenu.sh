@@ -93,6 +93,7 @@ menu
 x)
 clear
 exit
+;;
 *)
 clear
 menu
