@@ -157,7 +157,7 @@ sed -i '/#vmess-tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'"' /usr/local/etc/xray/xvmess.json
 cat>/etc/xray/vmess-$user-tls.json<<EOF
       {
-      "v": "4",
+      "v": "2",
       "ps": "🔰VMESS WS TLS ${user}",
       "add": "${domain}",
       "port": "${tls}",
@@ -178,7 +178,7 @@ sed -i '/#vmess-http-tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'"' /usr/local/etc/xray/xvmess.json
 cat>/etc/xray/vmess-$user-tls.json<<EOF
       {
-      "v": "5",
+      "v": "2",
       "ps": "🔰VMESS HTTP TLS ${user}",
       "add": "${domain}",
       "port": "${vmhttp}",
@@ -213,6 +213,7 @@ trojanhttp="trojan://${uuid}@${domain}:$thttp?sni=${domain}&type=tcp&security=tl
 trojanhdua="trojan://$uuid@$domain:$thttp?sni=angilangilgamping.com&type=http&security=tls&path=/gandringhttp#%F0%9F%94%B0TROJAN+H2C+TLS+$user"
 trojanquic="trojan://$uuid@$MYIP:$tquic?sni=$domain&quicSecurity=$domain&key=gandringquic&security=tls&type=quic&headerType=none#%F0%9F%94%B0TROJAN+QUIC+TLS+$user"
 trojangrpc="trojan://$uuid@$domain:$tgrpc?serviceName=/gandringgrpc&sni=$domain&mode=gun&security=tls&type=grpc#%F0%9F%94%B0TROJAN+GRPC+TLS+$user"
+
 systemctl restart xvless.service
 systemctl restart xray.service
 systemctl restart xtrojan.service
@@ -220,7 +221,8 @@ systemctl restart trojangrpc
 systemctl restart xvmess
 systemctl restart vlessquic
 service cron restart
-clear
+
+echo -e ""
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;46m🔰 AKUN AIO PORT TESTER 🔰\e[m"   
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
