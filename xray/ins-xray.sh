@@ -985,6 +985,7 @@ wget -O addtrojangrpc "https://${wisnuvpnn}/addtrojangrpc.sh"
 wget -O addtrojanwss "https://${wisnuvpnn}/addtrojanwss.sh"
 wget -O addtrojanhttp "https://${wisnuvpnn}/addtrojanhttp.sh"
 wget -O addtrojanhdua "https://${wisnuvpnn}/addtrojanhdua.sh"
+wget -O addtrojangfw "https://${wisnuvpnn}/addtrojangfw.sh"
 wget -O addtrojanquic "https://${wisnuvpnn}/addtrojanquic.sh"
 wget -O addtrojantester "https://${wisnuvpnn}/addtrohantester.sh"
 wget -O addvmesstester "https://${wisnuvpnn}/addvmesstester.sh"
@@ -1006,6 +1007,7 @@ chmod +x addtrojangrpc
 chmod +x addtrojanwss
 chmod +x addtrojanhttp
 chmod +x addtrojanhdua
+chmod +x addtrojangfw
 chmod +x addtrojanquic
 chmod +x addxrayss
 chmod +x addxtreme
