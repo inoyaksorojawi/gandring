@@ -6,10 +6,10 @@ echo -e ""
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[43;1;46m   🔰 MENU TROJAN XTLS GFW H2C GRPC WS HTTP & GO 🔰     \e[0m"
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "01\e[1;33m) Buat Akun TROJAN XTLS & GFW \e[m"
-echo -e "02\e[1;33m) Hapus Akun TROJAN XTLS & GFW \e[m"
-echo -e "03\e[1;33m) Perpanjang Masa Aktif Akun TROJAN XTLS & GFW \e[m"
-echo -e "04\e[1;33m) Cek User Login TROJAN XTLS \e[m"
+echo -e "01\e[1;33m) Buat Akun WEBSOCKET \e[m"
+echo -e "02\e[1;33m) Hapus Akun TROJAN WEBSOCKET  \e[m"
+echo -e "03\e[1;33m) Perpanjang Masa Aktif Akun TROJAN WEBSOCKET \e[m"
+echo -e "04\e[1;33m) Cek User Login TROJAN WEBSOCKET \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "05\e[1;33m) Buat Akun TROJAN H2C \e[m"
 echo -e "06\e[1;33m) Hapus Akun TROJAN H2C \e[m"
@@ -21,10 +21,10 @@ echo -e "10\e[1;33m) Hapus Akun TROJAN GRPC \e[m"
 echo -e "11\e[1;33m) Perpanjang Masa Aktif Akun TROJAN GRPC \e[m"
 echo -e "12\e[1;33m) Cek User Login TROJAN GRPC \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "13\e[1;33m) Buat Akun TROJAN WEBSOCKET \e[m"
-echo -e "14\e[1;33m) Hapus Akun TROJAN WEBSOCKET  \e[m"
-echo -e "15\e[1;33m) Perpanjang Masa Aktif Akun TROJAN WEBSOCKET  \e[m"
-echo -e "16\e[1;33m) Cek User Login TROJAN WEBSOCKET  \e[m"
+echo -e "13\e[1;33m) Buat Akun TROJAN XTLS \e[m"
+echo -e "14\e[1;33m) Hapus Akun TROJAN XTLS  \e[m"
+echo -e "15\e[1;33m) Perpanjang Masa Aktif Akun TROJAN XTLS  \e[m"
+echo -e "16\e[1;33m) Cek User Login TROJAN XTLS  \e[m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "17\e[1;33m) Buat Akun TROJAN HTTP \e[m"
 echo -e "18\e[1;33m) Hapus Akun TROJAN HTTP \e[m"
@@ -50,16 +50,16 @@ read -p "Silahkan Pilih Angka[ 1 - 0 ] : " menu
 echo -e ""
 case $menu in
 1)
-addtrojanxtls
+addtrojanwss
 ;;
 2)
-deltrojanxtls
+deltrojanwss
 ;;
 3)
-renewtrojanxtls
+renewtrojanwss
 ;;
 4)
-cektrojanxtls
+cektrojanwss
 ;;
 5)
 addtrojanhdua
@@ -86,16 +86,16 @@ renewtrojangrpc
 cektrojangrpc
 ;;
 13)
-addtrojanwss
+addtrojanxtls
 ;;
 14)
-deltrojanwss
+deltrojanxtls
 ;;
 15)
-renewtrojanwss
+renewtrojanxtls
 ;;
 16)
-cektrojanwss
+cektrojanxtls
 ;;
 17)
 addtrojanhttp
