@@ -68,12 +68,6 @@ wget https://${wisnuvpnnnnnnnn}/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 wget https://${wisnuvpnnnnnnnnn}/piton.sh && chmod +x piton.sh && ./piton.sh
 # Ohp Server
 wget https://${wisnuvpnnnnnnnnnn}/ohp.sh && chmod +x ohp.sh && ./ohp.sh
-# Install SlowDNS
-#wget https://raw.githubusercontent.com/pengkol/Mantap/main/SLDNS/install-sldns && chmod +x install-sldns && ./install-sldns
-# Informasi IP Saya dan Semua Port TCP UDP
-# wget https://raw.githubusercontent.com/pengkol/Mantap/main/ipsaya.sh && chmod +x ipsaya.sh
-# install shadowsocks plugin
-#wget https://raw.githubusercontent.com/pengkol/Mantap/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
@@ -107,12 +101,9 @@ wget -O /etc/set.sh "https://${wisnuvpn}/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
-echo " "
-echo "Installation has been completed!!"echo " "
-echo "============================================================================" | tee -a log-install.txt
-echo "" | tee -a log-install.txt
+echo "Installation has been completed!!"
 echo "----------------------------------------------------------------------------" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
+echo ""
 echo " 🔰 >>> Service & Port" |tee -a log-install.txt
 echo " 🔰 PORT OPENSSH : 22" |tee -a log-install.txt
 echo " 🔰 PORT OPENVPN TCP : 700" |tee -a log-install.txt
